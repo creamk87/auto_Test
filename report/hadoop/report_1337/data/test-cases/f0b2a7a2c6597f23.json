@@ -1,0 +1,197 @@
+{
+  "uid" : "f0b2a7a2c6597f23",
+  "name" : "test_plsql_single_function[更新数据_update_01]",
+  "fullName" : "cases.hadoop.plsql.testplsql.TestPLSqlManipulateData#test_plsql_single_function",
+  "historyId" : "ec6862816861b3d1a3ea4bae053b3984",
+  "time" : {
+    "start" : 1609388170006,
+    "stop" : 1609388210044,
+    "duration" : 40038
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_Class__pytest_setup_method",
+    "time" : {
+      "start" : 1609388169837,
+      "stop" : 1609388170006,
+      "duration" : 169
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class",
+    "time" : {
+      "start" : 1609388168217,
+      "stop" : 1609388169837,
+      "duration" : 1620
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "初始化表及数据",
+      "time" : {
+        "start" : 1609388170006,
+        "stop" : 1609388185607,
+        "duration" : 15601
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取数据库连接id",
+      "time" : {
+        "start" : 1609388185607,
+        "stop" : 1609388185714,
+        "duration" : 107
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取对应的表、sql语句、语句执行顺序及预期结果",
+      "time" : {
+        "start" : 1609388185714,
+        "stop" : 1609388185714,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "按顺序执行sql语句，将返回结果与预期结果做对比",
+      "time" : {
+        "start" : 1609388185714,
+        "stop" : 1609388210044,
+        "duration" : 24330
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "_Class__pytest_setup_method::0",
+    "time" : {
+      "start" : 1609388210045,
+      "stop" : 1609388210045,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class::0",
+    "time" : {
+      "start" : 1609388225788,
+      "stop" : 1609388237737,
+      "duration" : 11949
+    },
+    "status" : "broken",
+    "statusMessage" : "KeyboardInterrupt\n",
+    "statusTrace" : "  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\allure_commons\\_allure.py\", line 185, in __call__\n    return self._fixture_function(*args, **kwargs)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_pytest\\fixtures.py\", line 800, in _teardown_yield_fixture\n    next(it)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_pytest\\python.py\", line 705, in xunit_setup_class_fixture\n    _call_with_optional_argument(func, self.obj)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_pytest\\python.py\", line 632, in _call_with_optional_argument\n    func(arg)\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\cases\\hadoop\\plsql\\testplsql.py\", line 34, in teardown_class\n    status = hp.sdc_dw.drop_database(cls.db_name, cls.conn_id)\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\api\\http\\sdc_dw.py\", line 413, in drop_database\n    dw_basic.dwrun_sqlParse_v1(dbName=db_name, sql=sql, connId=connid)\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\api\\http\\sdc_dw_base.py\", line 423, in dwrun_sqlParse_v1\n    result = my_request.request('post', url=url, json=data)\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\api\\http\\base_api.py\", line 50, in request\n    response = self.http_client_session.request(method, url, **kwargs)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\requests\\sessions.py\", line 530, in request\n    resp = self.send(prep, **send_kwargs)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\requests\\sessions.py\", line 643, in send\n    r = adapter.send(request, **kwargs)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\requests\\adapters.py\", line 439, in send\n    resp = conn.urlopen(\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\urllib3\\connectionpool.py\", line 670, in urlopen\n    httplib_response = self._make_request(\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\urllib3\\connectionpool.py\", line 426, in _make_request\n    six.raise_from(e, None)\n  File \"<string>\", line 3, in raise_from\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\urllib3\\connectionpool.py\", line 421, in _make_request\n    httplib_response = conn.getresponse()\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\http\\client.py\", line 1347, in getresponse\n    response.begin()\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\http\\client.py\", line 307, in begin\n    version, status, reason = self._read_status()\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\http\\client.py\", line 268, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\socket.py\", line 669, in readinto\n    return self._sock.recv_into(b)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\ssl.py\", line 1241, in recv_into\n    return self.read(nbytes, buffer)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\ssl.py\", line 1099, in read\n    return self._sslobj.read(len, buffer)\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "SQL 单行函数使用"
+  }, {
+    "name" : "tag",
+    "value" : "login"
+  }, {
+    "name" : "parentSuite",
+    "value" : "cases.hadoop.plsql"
+  }, {
+    "name" : "suite",
+    "value" : "testplsql"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPLSqlManipulateData"
+  }, {
+    "name" : "host",
+    "value" : "SF-4359"
+  }, {
+    "name" : "thread",
+    "value" : "13980-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "cases.hadoop.plsql.testplsql"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "cases",
+    "value" : "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_01', 'name_id': 'dwrun_sql_403_update_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set sal=2460 where ename=\\'SCOTT1\\';\"', 'check_td': 'f\"select sal from {tb_name} where ename=\\'SCOTT1\\';\"'}, 'expected_result': [['2460']]}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "login" ]
+  },
+  "source" : "f0b2a7a2c6597f23.json",
+  "parameterValues" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_01', 'name_id': 'dwrun_sql_403_update_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set sal=2460 where ename=\\'SCOTT1\\';\"', 'check_td': 'f\"select sal from {tb_name} where ename=\\'SCOTT1\\';\"'}, 'expected_result': [['2460']]}" ]
+}

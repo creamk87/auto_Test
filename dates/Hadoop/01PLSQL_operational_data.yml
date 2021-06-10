@@ -1,0 +1,245 @@
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 更新数据_update_01
+  name_id: dwrun_sql_403_update_01
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 设置SCOTT1的sal为2460[['2460']]
+    # check_td: f"select sal from {tb_name1} where ename='SCOTT1';"
+    sql: f"update {tb_name1} set sal=2460 where ename='SCOTT1';"
+    check_td: f"select sal from {tb_name1} where ename='SCOTT1';"
+  expected_result:
+    data: [['2460']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 更新数据_update_02
+  name_id: dwrun_sql_403_update_02
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 设置deptno为20的所有员工sal=sal*1.1 comm=sal*0.1
+    # check_td: f"select * from {tb_name1} where deptno=20;"
+    sql: f"update {tb_name1} set sal=sal*1.1,comm=sal*0.1 where deptno=20;"
+    check_td: f"select * from {tb_name1} where deptno=20;"
+  expected_result:
+    data: [['2222', 'SMITH', 'CLERK', '7902', '1980-12-17', '880', '80', '20'], ['7369', 'SMITH', 'CLERK', '7902', '1980-12-17', '880.55', '80.05', '20'], ['7379', 'SMITH', 'CLERK', '7902', '1980-12-17', '880', '80', '20'], ['7566', 'JONES2', 'MANAGER', '7839', '2000-04-02', '3272.83', '297.53', '20'], ['7802', 'SCOTT1', 'ANALYST', '7566', '1981-12-03', '3300', '300', '20'], ['7902', 'FORD', 'ANALYST', '7788', '1981-12-03', '3300', '300', '20']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 更新数据_update_03
+  name_id: dwrun_sql_403_update_03
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 设置empno为7782的员工,雇用日期为1984/01/01
+    # check_td: f"select * from {tb_name1} where empno=7782;"
+    sql: f"update {tb_name1} set hiredate=to_date('1984/01/01','YYYY/MM/DD') where empno=7782;"
+    check_td: f"select * from {tb_name1} where empno=7782;"
+  expected_result:
+    data: [['7782', 'CLARK', 'MANAGER', '7839', '1984-01-01', '2450.5', '', '10']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 更新数据_update_04
+  name_id: dwrun_sql_403_update_04
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 设置SCOTT1的job,sal,comm与SMITH的job,sal,comm一致
+    # check_td: f"select job,sal,comm from {tb_name1} where ename='SCOTT1';"
+    sql: f"update {tb_name1} set (job,sal,comm)=(select job,sal,comm from {tb_name1} where ename='SMITH') where ename='SCOTT1';"
+    check_td: f"select job,sal,comm from {tb_name1} where ename='SCOTT1';"
+  expected_result:
+    data: [['CLERK', '800', '']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 更新数据_update_05
+  name_id: dwrun_sql_403_update_05
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 设置所有job为MANAGER的人的deptno为7782号人的deptno,查询返回的所有deptno应该为10
+    # check_td: f"select * from emp where job='MANAGER';"
+    sql: f"update {tb_name1} set deptno=(select deptno from {tb_name1} where empno=7782) where job=(select job from {tb_name1} where empno=7782);"
+    check_td: f"select * from {tb_name1} where job='MANAGER';"
+  expected_result:
+    data: [['7566', 'JONES2', 'MANAGER', '7839', '2000-04-02', '2975.3', '', '10'], ['7698', 'BLAKE', 'MANAGER', '7839', '1981-05-01', '2850', '', '10'], ['7782', 'CLARK', 'MANAGER', '7839', '1981-06-09', '2450.5', '', '10']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 删除数据_delete_01
+  name_id: dwrun_sql_404_delete_rall_back_01
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 从表中删除SMITH的数据，查询应该为[]
+    sql: f"delete from {tb_name1} where ename='SMITH';"
+    check_td: f"select * from {tb_name1} where ename='SMITH';"
+  expected_result:
+    data: []
+    header:
+
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 删除数据_delete_02
+  name_id: dwrun_sql_404_delete_rall_back_02
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 删除整张表，检查为空[]
+    sql: f"delete from {tb_name1};"
+    check_td: f"select * from {tb_name1};"
+  expected_result:
+    data: []
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 删除数据_delete_03
+  name_id: dwrun_sql_404_delete_rall_back_03
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 强制删除整张表,检查为空[]
+    sql: f"truncate table {tb_name1};"
+    check_td: f"select * from {tb_name1};"
+  expected_result:
+    data: []
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 使用子查询_insert_select_01
+  name_id: dwrun_sql_405_insert_select_01
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 在查询出的结果中,插入一条数据,检查数据为[['1112', 'MARY', 'MR', '', '', '2000', '', '30']]
+    sql: f"insert into (select empno,ename,sal,deptno from {tb_name1} where deptno>20) values(1112,'MARY',2000,30);"
+    check_td: f"select * from {tb_name1} where empno=1112;"
+  expected_result:
+    data: [['1112', 'MARY', 'MR', '', '', '2000', '', '30']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 增加单行数据_insert_uniline_01
+  name_id: dwrun_sql_406_insert_uniline_01
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 在dept表中插入一条数据,检查数据为[['50', 'TRAIN', 'BOSTON']]
+    sql: f"insert into {tb_name2} values(50,'TRAIN','BOSTON');"
+    check_td: f"select * from {tb_name2} where deptno=50;"
+  expected_result:
+    data: [['50', 'TRAIN', 'BOSTON']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 增加单行数据_insert_uniline_02
+  name_id: dwrun_sql_406_insert_uniline_02
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 在emp表中插入一条数据,检查数据为[['1234', 'JOHN', 'CLERK', '', '1986-10-01', '', '', '']]
+    sql: f"insert into {tb_name1} (empno,ename,job,hiredate) values(1234,'JOHN','CLERK','1986-10-01');"
+    check_td: f"select * from {tb_name1} where empno=1234"
+  expected_result:
+    data: [['1234', 'JOHN', 'CLERK', '', '1986-10-01', '', '', '']]
+    header:
+
+- module_name: SQL 操纵数据语言查询
+  module_case_name: 增加单行数据_insert_uniline_03
+  name_id: dwrun_sql_406_insert_uniline_03
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+    - check_td
+  exec_sql:
+    # 在emp表中插入一条数据,检查数据为[['1356', 'MARY', 'CLERK', '', '1983-10-20', '', '', '']]
+    sql: f"insert into {tb_name1} (empno,ename,job,hiredate) values(1356,'MARY','CLERK',to_date('1983-10-20','YYYY-MM-DD'));"
+    check_td: f"select * from {tb_name1} where empno=1356"
+  expected_result:
+    data: [['1356', 'MARY', 'CLERK', '', '1983-10-20', '', '', '']]
+    header:

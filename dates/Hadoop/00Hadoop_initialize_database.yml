@@ -1,0 +1,35 @@
+insert_person_info:
+  - DROP TABLE IF EXISTS insert_person_info;
+  - create table insert_person_info(no number(4) PRIMARY KEY,name VARCHAR(255),weight FLOAT,height INTEGER,mail VARCHAR(255),address VARCHAR(255),birthdate date,creatTime timestamp);
+  - insert into insert_person_info values(1,'小明',61.8,182,'24413252@qq.com','成都锦江区',to_date('1-10-1981','dd-mm-yyyy'),CURRENT_TIMESTAMP());
+  - insert into insert_person_info values(2,'张三',60.5,159,'zhangsan@162.com','成都武侯区',to_date('13-9-1982','dd-mm-yyyy'),CURRENT_TIMESTAMP());
+  - insert into insert_person_info values(3,'NULL',45.2,135,'null@163.com','成都金牛区',to_date('15-4-1991','dd-mm-yyyy'),CURRENT_TIMESTAMP());
+  - insert into insert_person_info values(4,'王二',60.5,160,'wanger@qq.com','成都武侯区',to_date('13-2-1989','dd-mm-yyyy'),CURRENT_TIMESTAMP());
+  - insert into insert_person_info values(5,'董五',67.6,175,'dongwu@sefonsoft.com','成都锦江区',to_date('3-12-1998','dd-mm-yyyy'),CURRENT_TIMESTAMP());
+  - insert into insert_person_info values(6,'陈六六',70.0,200,'chenliuliu@qq.com','成都武侯区',to_date('30-11-2001','dd-mm-yyyy'),CURRENT_TIMESTAMP());
+emp:
+  - DROP TABLE IF EXISTS emp;
+  - create table emp(EMPNO NUMBER(4) PRIMARY KEY,ENAME VARCHAR2(10),JOB VARCHAR2(9) DEFAULT 'MR',MGR NUMBER(4),HIREDATE DATE,SAL NUMBER(7,2),COMM NUMBER(7,2),DEPTNO NUMBER(4));
+  - INSERT INTO emp VALUES(7802,'SCOTT1','ANALYST',7566,to_date('3-12-1981','dd-mm-yyyy'),3000,NULL,20);
+  - INSERT INTO emp VALUES(7369,'SMITH','CLERK',7902,to_date('17-12-1980','dd-mm-yyyy'),800.5,null,20);
+  - INSERT INTO emp VALUES(7499,'ALLEN','SALESMAN',7698,to_date('20-2-1991','dd-mm-yyyy'),1600,300,30);
+  - INSERT INTO emp VALUES(7521,'WARD','SALESMAN',7698,to_date('22-2-1981','dd-mm-yyyy'),1250,500,30);
+  - INSERT INTO emp VALUES(7566,'JONES2','MANAGER',7839,to_date('2-4-2000','dd-mm-yyyy'),2975.3,NULL,20);
+  - INSERT INTO emp VALUES(7654,'MARTIN','SALESMAN',7698,to_date('28-9-2001','dd-mm-yyyy'),1250,1400,30);
+  - INSERT INTO emp VALUES(7698,'BLAKE','MANAGER',7839,to_date('1-5-1981','dd-mm-yyyy'),2850,NULL,30);
+  - INSERT INTO emp VALUES(7782,'CLARK','MANAGER',7839,to_date('9-6-1981','dd-mm-yyyy'),2450.5,NULL,10);
+  - INSERT INTO emp VALUES(7839,'KING','PRESIDENT',NULL,to_date('17-11-1999','dd-mm-yyyy'),5000.6,NULL,10);
+  - INSERT INTO emp VALUES(7844,'TURNER','SALESMAN',7698,to_date('8-9-1981','dd-mm-yyyy'),1500,0,30);
+  - INSERT INTO emp VALUES(7900,'JAMES','CLERK',7698,to_date('3-12-1995','dd-mm-yyyy'),950,NULL,30);
+  - INSERT INTO emp VALUES(7902,'FORD','ANALYST',7788,to_date('3-12-1981','dd-mm-yyyy'),3000,NULL,20);
+  - INSERT INTO emp VALUES (7934,'MILLER','CLERK',7782,to_date('23-1-1982','dd-mm-yyyy'),1300,NULL,10);
+  - INSERT INTO emp VALUES (7379, 'SMITH', 'CLERK', 7902, to_date('17-12-1980', 'dd-mm-yyyy'), 800, NULL, 20);
+  - INSERT INTO emp VALUES (7479, 'ALLEN', 'SALESMAN', 7698, to_date('20-2-1981', 'dd-mm-yyyy'), 1600.6, 300, 30);
+  - INSERT INTO emp VALUES (2222, 'SMITH', 'CLERK', 7902, to_date('17-12-1980', 'dd-mm-yyyy'), 800, NULL, 20);
+dept:
+  - DROP TABLE IF EXISTS dept;
+  - CREATE TABLE dept(DEPTNO NUMBER(4) PRIMARY KEY,DNAME VARCHAR2(14),LOC VARCHAR2(13));
+  - INSERT INTO dept VALUES (10,'ACCOUNTING','NEW YORK');
+  - INSERT INTO dept VALUES (20,'RESEARCH','DALLAS');
+  - INSERT INTO dept VALUES (30,'SALES','CHICAGO');
+  - INSERT INTO dept VALUES (40,'OPERATIONS','BOSTON');

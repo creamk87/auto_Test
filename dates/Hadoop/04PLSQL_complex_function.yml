@@ -1,0 +1,107 @@
+- module_name: SQL 复杂查询使用
+  module_case_name: 复杂查询_CASE_函数
+  name_id: test_plsql_191_complex_query_case_191
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # CASE函数查询
+    sql: f"select ename,sal,CASE when sal<2000 then sal*1.2 when sal >=3000 then sal*1.1 else sal end "Actual Salary" from {tb_name1};"
+  expected_result:
+    data: [['SMITH', '800', '960'], ['SMITH', '800.5', '960.6'], ['SMITH', '800', '960'], ['ALLEN', '1600.6', '1920.72'], ['ALLEN', '1600', '1920'], ['WARD', '1250', '1500'], ['JONES2', '2975.3', '2975.3'], ['MARTIN', '1250', '1500'], ['BLAKE', '2850', '2850'], ['CLARK', '2450.5', '2450.5'], ['SCOTT1', '3000', '3300'], ['KING', '5000.6', '5500.66'], ['TURNER', '1500', '1800'], ['JAMES', '950', '1140'], ['FORD', '3000', '3300'], ['MILLER', '1300', '1560']]
+    header:
+
+- module_name: SQL 复杂查询使用
+  module_case_name: 复杂查询_DECODE_函数
+  name_id: test_plsql_192_complex_query_decode_192
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # DECODE函数查询
+    sql: f"select ename,deptno,sal,DECODE(deptno,10,sal*1.2,20,sal*1.1,sal) "Actual Salary" from {tb_name1};"
+  expected_result:
+    data: [['SMITH', '20', '800', '880.0'], ['SMITH', '20', '800.5', '880.55'], ['SMITH', '20', '800', '880.0'], ['ALLEN', '30', '1600.6', '1600.6'], ['ALLEN', '30', '1600', '1600.0'], ['WARD', '30', '1250', '1250.0'], ['JONES2', '20', '2975.3', '3272.83'], ['MARTIN', '30', '1250', '1250.0'], ['BLAKE', '30', '2850', '2850.0'], ['CLARK', '10', '2450.5', '2940.6'], ['SCOTT1', '20', '3000', '3300.0'], ['KING', '10', '5000.6', '6000.72'], ['TURNER', '30', '1500', '1500.0'], ['JAMES', '30', '950', '950.0'], ['FORD', '20', '3000', '3300.0'], ['MILLER', '10', '1300', '1560.0']]
+    header:
+
+- module_name: SQL 复杂查询使用
+  module_case_name: 复杂查询_INTERSECT_函数
+  name_id: test_plsql_193_complex_query_intersect_193
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # INTERSECT函数查询
+    sql: f"select id,name,job from worker INTERSECT select empno,ename,job from {emp};"
+  expected_result:
+    data: [['2222', 'SMITH', 'CLERK']]
+    header:
+
+- module_name: SQL 复杂查询使用
+  module_case_name: 复杂查询_MINUS_函数
+  name_id: test_plsql_194_complex_query_minus_194
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # MINUS函数查询
+    sql: f"select * from (select * from {tb_name1} where SAL >=1000 MINUS select * from {tb_name1} where SAL >=2000) order by empno;"
+  expected_result:
+    data: [['7479','ALLEN','SALESMAN','7698','1981-02-20','1600.6','300','30'],['7499','ALLEN','SALESMAN','7698','1991-02-20','1600','300','30'],['7521','WARD','SALESMAN','7698','1981-02-22','1250','500','30'],['7654','MARTIN','SALESMAN','7698','2001-09-28','1250','1400','30'],['7844','TURNER','SALESMAN','7698','1981-09-08','1500','0','30'],['7934','MILLER','CLERK','7782','1982-01-23','1300','','10']]
+    header:
+
+- module_name: SQL 复杂查询使用
+  module_case_name: 复杂查询_UNION_ALL_函数
+  name_id: test_plsql_195_complex_query_union_all_195
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # UNION_ALL函数查询
+    sql: f"select * from (select * from {tb_name1} where deptno >=20  UNION all select * from {tb_name1} where deptno <20) result order by empno;"
+  expected_result:
+    data: [['2222', 'SMITH', 'CLERK', '7902', '1980-12-17', '800', '', '20'], ['7369', 'SMITH', 'CLERK', '7902', '1980-12-17', '800.5', '', '20'], ['7379', 'SMITH', 'CLERK', '7902', '1980-12-17', '800', '', '20'], ['7479', 'ALLEN', 'SALESMAN', '7698', '1981-02-20', '1600.6', '300', '30'], ['7499', 'ALLEN', 'SALESMAN', '7698', '1991-02-20', '1600', '300', '30'], ['7521', 'WARD', 'SALESMAN', '7698', '1981-02-22', '1250', '500', '30'], ['7566', 'JONES2', 'MANAGER', '7839', '2000-04-02', '2975.3', '', '20'], ['7654', 'MARTIN', 'SALESMAN', '7698', '2001-09-28', '1250', '1400', '30'], ['7698', 'BLAKE', 'MANAGER', '7839', '1981-05-01', '2850', '', '30'], ['7782', 'CLARK', 'MANAGER', '7839', '1981-06-09', '2450.5', '', '10'], ['7802', 'SCOTT1', 'ANALYST', '7566', '1981-12-03', '3000', '', '20'], ['7839', 'KING', 'PRESIDENT', '', '1999-11-17', '5000.6', '', '10'], ['7844', 'TURNER', 'SALESMAN', '7698', '1981-09-08', '1500', '0', '30'], ['7900', 'JAMES', 'CLERK', '7698', '1995-12-03', '950', '', '30'], ['7902', 'FORD', 'ANALYST', '7788', '1981-12-03', '3000', '', '20'], ['7934', 'MILLER', 'CLERK', '7782', '1982-01-23', '1300', '', '10']]
+    header:
+
+- module_name: SQL 复杂查询使用
+  module_case_name: 复杂查询_UNION_函数
+  name_id: test_plsql_196_complex_query_union_196
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # UNION函数查询
+    sql: f"select * from (select * from {tb_name1} where deptno >=20  UNION select * from {tb_name1} where deptno <20) result order by empno;"
+  expected_result:
+    data: [['2222', 'SMITH', 'CLERK', '7902', '1980-12-17', '800', '', '20'], ['7369', 'SMITH', 'CLERK', '7902', '1980-12-17', '800.5', '', '20'], ['7379', 'SMITH', 'CLERK', '7902', '1980-12-17', '800', '', '20'], ['7479', 'ALLEN', 'SALESMAN', '7698', '1981-02-20', '1600.6', '300', '30'], ['7499', 'ALLEN', 'SALESMAN', '7698', '1991-02-20', '1600', '300', '30'], ['7521', 'WARD', 'SALESMAN', '7698', '1981-02-22', '1250', '500', '30'], ['7566', 'JONES2', 'MANAGER', '7839', '2000-04-02', '2975.3', '', '20'], ['7654', 'MARTIN', 'SALESMAN', '7698', '2001-09-28', '1250', '1400', '30'], ['7698', 'BLAKE', 'MANAGER', '7839', '1981-05-01', '2850', '', '30'], ['7782', 'CLARK', 'MANAGER', '7839', '1981-06-09', '2450.5', '', '10'], ['7802', 'SCOTT1', 'ANALYST', '7566', '1981-12-03', '3000', '', '20'], ['7839', 'KING', 'PRESIDENT', '', '1999-11-17', '5000.6', '', '10'], ['7844', 'TURNER', 'SALESMAN', '7698', '1981-09-08', '1500', '0', '30'], ['7900', 'JAMES', 'CLERK', '7698', '1995-12-03', '950', '', '30'], ['7902', 'FORD', 'ANALYST', '7788', '1981-12-03', '3000', '', '20'], ['7934', 'MILLER', 'CLERK', '7782', '1982-01-23', '1300', '', '10']]
+    header:

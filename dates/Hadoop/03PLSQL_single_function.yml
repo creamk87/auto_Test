@@ -1,0 +1,270 @@
+- module_name: SQL 单行函数使用
+  module_case_name: 日期时间函数_01_add_months
+  name_id: dwrun_sql_429_date_function_add_months
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 特定日期之前或之后月份对应的日期
+    sql: f"select ename,add_months(hiredate,20*12),hiredate '20周年' from {tb_name1} where deptno=20;"
+  expected_result:
+    data: [['SMITH', '2000-12-17', '1980-12-17'], ['SMITH', '2000-12-17', '1980-12-17'],['SMITH', '2000-12-17', '1980-12-17'], ['JONES2', '2020-04-02', '2000-04-02'],['SCOTT1', '2001-12-03', '1981-12-03'], ['FORD', '2001-12-03', '1981-12-03']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 日期时间函数_02_next_day
+  name_id: dwrun_sql_429_date_function_next_day
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 特定日期之后对应日期
+    sql: f"select ename,hiredate,next_day(hiredate,'MONDAY') Friday from {tb_name1} where deptno=20;"
+  expected_result:
+    data: [['SMITH', '1980-12-17', '1980-12-22'], ['SMITH', '1980-12-17', '1980-12-22'],['SMITH', '1980-12-17', '1980-12-22'], ['JONES2', '2000-04-02', '2000-04-03'],['SCOTT1', '1981-12-03', '1981-12-07'], ['FORD', '1981-12-03', '1981-12-07']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 日期时间函数_03_extract
+  name_id: dwrun_sql_429_date_function_extract
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 从日期时间值中抽取信息（YEAR,MONTH,DAY,HOUR）
+    sql: f"select extract(month from to_date('2109-07-02','yyyy-mm-dd')) current_month from {tb_name1};"
+  expected_result:
+    data: [['July']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 日期时间函数_04_months_between
+  name_id: dwrun_sql_429_date_function_months_between
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 月份差
+    sql: f"select trunc(months_between(to_date('2018-10-30','yyyy-MM-dd'),to_date('2019-10-30','yyyy-MM-dd')))/2) work_year from {tb_name1} where empno=2222"
+  expected_result:
+    data: [["-6"]]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 数字函数_01_round
+  name_id: dwrun_sql_430_number_function_01_round
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 四舍五入
+    sql: f"select sum(sal),round(avg(sal)) from {tb_name1} where deptno=10;"
+  expected_result:
+    data: [['8751.1', '2917']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 数字函数_02_trunc
+  name_id: dwrun_sql_430_number_function_02_trunc
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 保留小数的位数
+    sql: f"select sum(sal),trunc(avg(sal),1) from {tb_name1} where deptno=10;"
+  expected_result:
+    data: [['8751.1', '2917']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 数字函数_03_mod
+  name_id: dwrun_sql_430_number_function_03_mod
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 返回一个n1除以n2的余数
+    sql: f"select mod(10,3),mod(3,3),mod(2,3) from {tb_name1};"
+  expected_result:
+    data: [['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2']]
+    header:
+
+
+- module_name: SQL 单行函数使用
+  module_case_name: 转换函数_01_to_char
+  name_id: dwrun_sql_431_transform_function_01_to_char
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # TO_CHAR----转换数字数据
+    sql: f"select ename,to_char(sal,'L99999.99') salary from {tb_name1} where deptno=20;"
+  expected_result:
+    data: [['ALLEN', '1991-02-20'], ['JONES2', '2000-04-02'], ['MARTIN', '2001-09-28'],['KING', '1999-11-17'], ['JAMES', '1995-12-03'], ['MILLER', '1982-01-23']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 转换函数_02_to_date
+  name_id: dwrun_sql_431_transform_function_02_to_date
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # TO_DATE---转换日期数据
+    sql: f"select ename,hiredate from {tb_name1} where hiredate>to_date('1981-12-31','YYYY-MM-DD');"
+  expected_result:
+    data: [['ALLEN', '1991-02-20'], ['JONES2', '2000-04-02'], ['MARTIN', '2001-09-28'],['KING', '1999-11-17'], ['JAMES', '1995-12-03'], ['MILLER', '1982-01-23']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 转换函数_03_to_number
+  name_id: dwrun_sql_431_transform_function_03_to_number
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # TO_NUMBER---转换数字数据
+    sql: f"select ename,sal from {tb_name1} where sal>to_number('$3000.00','$99999.99');"
+  expected_result:
+    data: [['KING', '5000.6']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 字符函数_01_upper
+  name_id: dwrun_sql_433_string_function_01_upper
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # UPPER/LOWER----转换大小写
+    sql: f"select empno,sal,job,ename from {tb_name1} where upper(ename)='SMITH';"
+  expected_result:
+    data: [['2222', '800', 'CLERK', 'SMITH'], ['7369', '800.5', 'CLERK', 'SMITH'],['7379', '800', 'CLERK', 'SMITH']]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 字符函数_02_concat
+  name_id: dwrun_sql_433_string_function_02_concat
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # CONCAT----字符串连接
+    sql: f"select concat(concat(ename,','),sal) from {tb_name1} where deptno=10;"
+  expected_result:
+    data: [["CLARK,2450.50"], ["KING,5000.60"], ["MILLER,1300.00"]]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 字符函数_03_instr
+  name_id: dwrun_sql_433_string_function_03_instr
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # INSTR---确定特定字符串在源字符串中的位置
+    sql: f"select instr('Great Wall In China','China') from {tb_name1} where deptno=10;"
+  expected_result:
+    data: [["15"], ["15"], ["15"]]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 字符函数_04_substr
+  name_id: dwrun_sql_433_string_function_04_substr
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # SUBSTR----提取子字符串
+    sql: f"select substr('Great Wall In China',7,30) from {tb_name1} where deptno=10;"
+  expected_result:
+    data: [["Wall In China"], ["Wall In China"], ["Wall In China"]]
+    header:
+
+- module_name: SQL 单行函数使用
+  module_case_name: 字符函数_05_Rpad
+  name_id: dwrun_sql_433_string_function_05_Rpad
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # LPAD/RPAD----在字符串左端/右端添加字符串
+    sql: f"select Rpad('In China',19,'Great Wall ') from {tb_name1} where deptno=10;"
+  expected_result:
+    data: [["In ChinaGreat Wall"], ["In ChinaGreat Wall"], ["In ChinaGreat Wall"]]
+    header:

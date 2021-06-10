@@ -1,0 +1,420 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "SQL 操纵数据语言查询",
+    "children" : [ {
+      "name" : "test_plsql_update_insert_delete[更新数据_update_01]",
+      "uid" : "1ab41ca36e085800",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311360013,
+        "stop" : 1609311419003,
+        "duration" : 58990
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_01', 'name_id': 'dwrun_sql_403_update_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set sal=2460 where ename=\\'SCOTT1\\';\"', 'check_td': 'f\"select sal from {tb_name} where ename=\\'SCOTT1\\';\"'}, 'expected_result': [['2460']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[更新数据_update_02]",
+      "uid" : "9d7b39874f7afb97",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311419125,
+        "stop" : 1609311465233,
+        "duration" : 46108
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_02', 'name_id': 'dwrun_sql_403_update_02', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set sal=sal*1.1,comm=sal*0.1 where deptno=20;\"', 'check_td': 'f\"select * from {tb_name} where deptno=20;\"'}, 'expected_result': [['2222', 'SMITH', 'CLERK', '7902', '1980-12-17', '880', '80', '20'], ['7369', 'SMITH', 'CLERK', '7902', '1980-12-17', '880.55', '80.05', '20'], ['7379', 'SMITH', 'CLERK', '7902', '1980-12-17', '880', '80', '20'], ['7566', 'JONES2', 'MANAGER', '7839', '2000-04-02', '3272.83', '297.53', '20'], ['7802', 'SCOTT1', 'ANALYST', '7566', '1981-12-03', '3300', '300', '20'], ['7902', 'FORD', 'ANALYST', '7788', '1981-12-03', '3300', '300', '20']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[更新数据_update_03]",
+      "uid" : "220afac8bd60f5d9",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311465392,
+        "stop" : 1609311514267,
+        "duration" : 48875
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_03', 'name_id': 'dwrun_sql_403_update_03', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set hiredate=to_date(\\'1984/01/01\\',\\'YYYY/MM/DD\\') where empno=7782;\"', 'check_td': 'f\"select * from {tb_name} where empno=7782;\"'}, 'expected_result': [['7782', 'CLARK', 'MANAGER', '7839', '1984-01-01', '2450.5', '', '10']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[更新数据_update_04]",
+      "uid" : "90a502afc08c5a10",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311514435,
+        "stop" : 1609311559883,
+        "duration" : 45448
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_04', 'name_id': 'dwrun_sql_403_update_04', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set (job,sal,comm)=(select job,sal,comm from {tb_name} where ename=\\'SMITH\\') where ename=\\'SCOTT1\\';\"', 'check_td': 'f\"select job,sal,comm from {tb_name} where ename=\\'SCOTT1\\';\"'}, 'expected_result': [['CLERK', '800', '']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[更新数据_update_05]",
+      "uid" : "b850373998c41771",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311560050,
+        "stop" : 1609311608139,
+        "duration" : 48089
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_05', 'name_id': 'dwrun_sql_403_update_05', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set deptno=(select deptno from {tb_name} where empno=7782) where job=(select job from {tb_name} where empno=7782);\"', 'check_td': 'f\"select * from {tb_name} where job=\\'MANAGER\\';\"'}, 'expected_result': [['7566', 'JONES2', 'MANAGER', '7839', '2000-04-02', '2975.3', '', '10'], ['7698', 'BLAKE', 'MANAGER', '7839', '1981-05-01', '2850', '', '10'], ['7782', 'CLARK', 'MANAGER', '7839', '1981-06-09', '2450.5', '', '10']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[删除数据_delete_01]",
+      "uid" : "51a0b2c20449db6a",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311608325,
+        "stop" : 1609311654535,
+        "duration" : 46210
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '删除数据_delete_01', 'name_id': 'dwrun_sql_404_delete_rall_back_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"delete from {tb_name} where ename=\\'SMITH\\';\"', 'check_td': 'f\"select * from {tb_name} where ename=\\'SMITH\\';\"'}, 'expected_result': []}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[删除数据_delete_02]",
+      "uid" : "62c4aeb877a09ec1",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311655134,
+        "stop" : 1609311751927,
+        "duration" : 96793
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '删除数据_delete_02', 'name_id': 'dwrun_sql_404_delete_rall_back_02', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"delete from {tb_name};\"', 'check_td': 'f\"select * from {tb_name};\"'}, 'expected_result': []}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[删除数据_delete_03]",
+      "uid" : "6e7448c60670f8fa",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311752190,
+        "stop" : 1609311797509,
+        "duration" : 45319
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '删除数据_delete_03', 'name_id': 'dwrun_sql_404_delete_rall_back_03', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"truncate table {tb_name};\"', 'check_td': 'f\"select * from {tb_name};\"'}, 'expected_result': []}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[使用子查询_insert_select_01]",
+      "uid" : "8ab4e50e40701a24",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311797640,
+        "stop" : 1609311848110,
+        "duration" : 50470
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '使用子查询_insert_select_01', 'name_id': 'dwrun_sql_405_insert_select_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"insert into (select empno,ename,sal,deptno from {tb_name} where deptno>20) values(1112,\\'MARY\\',2000,30);\"', 'check_td': 'f\"select * from {tb_name} where empno=1112;\"'}, 'expected_result': [['1112', 'MARY', 'MR', '', '', '2000', '', '30']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[增加单行数据_insert_uniline_01]",
+      "uid" : "f79b8f54d31c6249",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311848257,
+        "stop" : 1609311909485,
+        "duration" : 61228
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '增加单行数据_insert_uniline_01', 'name_id': 'dwrun_sql_406_insert_uniline_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'dept', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"insert into {tb_name} values(50,\\'TRAIN\\',\\'BOSTON\\');\"', 'check_td': 'f\"select * from {tb_name} where deptno=50;\"'}, 'expected_result': [['50', 'TRAIN', 'BOSTON']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[增加单行数据_insert_uniline_02]",
+      "uid" : "fb9236bfec0d984b",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311909934,
+        "stop" : 1609311958984,
+        "duration" : 49050
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '增加单行数据_insert_uniline_02', 'name_id': 'dwrun_sql_406_insert_uniline_02', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"insert into {tb_name} (empno,ename,job,hiredate) values(1234,\\'JOHN\\',\\'CLERK\\',\\'1986-10-01\\');\"', 'check_td': 'f\"select * from {tb_name} where empno=1234\"'}, 'expected_result': [['1234', 'JOHN', 'CLERK', '', '1986-10-01', '', '', '']]}" ]
+    }, {
+      "name" : "test_plsql_update_insert_delete[增加单行数据_insert_uniline_03]",
+      "uid" : "9248322e3f57d661",
+      "parentUid" : "b5271943eaca5280d4855cffcf2f2eb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311959170,
+        "stop" : 1609312019686,
+        "duration" : 60516
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '增加单行数据_insert_uniline_03', 'name_id': 'dwrun_sql_406_insert_uniline_03', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"insert into {tb_name} (empno,ename,job,hiredate) values(1356,\\'MARY\\',\\'CLERK\\',to_date(\\'1983-10-20\\',\\'YYYY-MM-DD\\'));\"', 'check_td': 'f\"select * from {tb_name} where empno=1356\"'}, 'expected_result': [['1356', 'MARY', 'CLERK', '', '1983-10-20', '', '', '']]}" ]
+    } ],
+    "uid" : "b5271943eaca5280d4855cffcf2f2eb6"
+  }, {
+    "name" : "SQL 创建和管理表",
+    "children" : [ {
+      "name" : "test_plsql_create_drop_table[创建普通表_create_01]",
+      "uid" : "5af21b67eb090a84",
+      "parentUid" : "6f3478aacddb3af361f8a221f8a44427",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609322103800,
+        "stop" : 1609322108648,
+        "duration" : 4848
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 创建和管理表', 'module_case_name': '创建普通表_create_01', 'name_id': 'dwrun_sql_001_create_table_01', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott01', 'exec_order': ['sql1', 'check_td1', 'sql', 'check_td'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}" ]
+    }, {
+      "name" : "test_plsql_create_drop_table[创建普通表_create_02]",
+      "uid" : "7175157e740bd39e",
+      "parentUid" : "6f3478aacddb3af361f8a221f8a44427",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609322108807,
+        "stop" : 1609322115734,
+        "duration" : 6927
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 创建和管理表', 'module_case_name': '创建普通表_create_02', 'name_id': 'dwrun_sql_001_create_table_02', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott03', 'exec_order': ['sql1', 'check_td1', 'sql', 'check_td'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(20));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}" ]
+    }, {
+      "name" : "test_plsql_create_drop_table[删除表操作_drop_01]",
+      "uid" : "d36326e4f89a8097",
+      "parentUid" : "6f3478aacddb3af361f8a221f8a44427",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609322115902,
+        "stop" : 1609322124398,
+        "duration" : 8496
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 创建和管理表', 'module_case_name': '删除表操作_drop_01', 'name_id': 'dwrun_sql_002_drop_table_01', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott04', 'exec_order': ['sql', 'check_td', 'sql1', 'check_td1'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}" ]
+    } ],
+    "uid" : "6f3478aacddb3af361f8a221f8a44427"
+  }, {
+    "name" : "SQL 单行函数使用",
+    "children" : [ {
+      "name" : "test_plsql_single_function[更新数据_update_01]",
+      "uid" : "f0b2a7a2c6597f23",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388170006,
+        "stop" : 1609388210044,
+        "duration" : 40038
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '更新数据_update_01', 'name_id': 'dwrun_sql_403_update_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"update {tb_name} set sal=2460 where ename=\\'SCOTT1\\';\"', 'check_td': 'f\"select sal from {tb_name} where ename=\\'SCOTT1\\';\"'}, 'expected_result': [['2460']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[日期时间函数_01_add_months]",
+      "uid" : "dd4e88bd8352a2d7",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388296738,
+        "stop" : 1609388337116,
+        "duration" : 40378
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '日期时间函数_01_add_months', 'name_id': 'dwrun_sql_429_date_function_add_months', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select ename,add_months(hiredate,20*12),hiredate \\'20周年\\' from {tb_name} where deptno=20;\"'}, 'expected_result': [['SMITH', '2000-12-17', '1980-12-17'], ['SMITH', '2000-12-17', '1980-12-17'], ['SMITH', '2000-12-17', '1980-12-17'], ['JONES2', '2020-04-02', '2000-04-02'], ['SCOTT1', '2001-12-03', '1981-12-03'], ['FORD', '2001-12-03', '1981-12-03']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[日期时间函数_02_next_day]",
+      "uid" : "8bae37ace32b6af4",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388337285,
+        "stop" : 1609388354494,
+        "duration" : 17209
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '日期时间函数_02_next_day', 'name_id': 'dwrun_sql_429_date_function_next_day', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select ename,hiredate,next_day(hiredate,\\'MONDAY\\') Friday from {tb_name} where deptno=20;\"'}, 'expected_result': [['SMITH', '1980-12-17', '1980-12-22'], ['SMITH', '1980-12-17', '1980-12-22'], ['SMITH', '1980-12-17', '1980-12-22'], ['JONES2', '2000-04-02', '2000-04-03'], ['SCOTT1', '1981-12-03', '1981-12-07'], ['FORD', '1981-12-03', '1981-12-07']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[日期时间函数_03_extract]",
+      "uid" : "7d7d8c122f613062",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609388354617,
+        "stop" : 1609388356070,
+        "duration" : 1453
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '日期时间函数_03_extract', 'name_id': 'dwrun_sql_429_date_function_extract', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select extract(month from to_date(\\'2109-07-02\\',\\'yyyy-mm-dd\\')) current_month from {tb_name};\"'}, 'expected_result': [['July']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[日期时间函数_04_months_between]",
+      "uid" : "6e8015360f0c6b69",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609388356420,
+        "stop" : 1609388357718,
+        "duration" : 1298
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '日期时间函数_04_months_between', 'name_id': 'dwrun_sql_429_date_function_months_between', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select trunc(months_between(to_date(\\'2018-10-30\\',\\'yyyy-MM-dd\\'),to_date(\\'2019-10-30\\',\\'yyyy-MM-dd\\')))/2) work_year from {tb_name} where empno=2222\"'}, 'expected_result': [['-6']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[数字函数_01_round]",
+      "uid" : "d6cfc5dfa7562dd9",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388357862,
+        "stop" : 1609388375564,
+        "duration" : 17702
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '数字函数_01_round', 'name_id': 'dwrun_sql_430_number_function_01_round', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select sum(sal),round(avg(sal)) from {tb_name} where deptno=10;\"'}, 'expected_result': [['8751.1', '2917']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[数字函数_02_trunc]",
+      "uid" : "69a39d35c296858b",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609388375741,
+        "stop" : 1609388376764,
+        "duration" : 1023
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '数字函数_02_trunc', 'name_id': 'dwrun_sql_430_number_function_02_trunc', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select sum(sal),trunc(avg(sal),1) from {tb_name} where deptno=10;\"'}, 'expected_result': [['8751.1', '2917']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[数字函数_03_mod]",
+      "uid" : "74d5a01829f7306a",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609388376949,
+        "stop" : 1609388393944,
+        "duration" : 16995
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '数字函数_03_mod', 'name_id': 'dwrun_sql_430_number_function_03_mod', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select mod(10,3),mod(3,3),mod(2,3) from {tb_name};\"'}, 'expected_result': [['1', '0', '2']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[转换函数_01_to_char]",
+      "uid" : "2a72128d7d270bed",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609388394192,
+        "stop" : 1609388395318,
+        "duration" : 1126
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '转换函数_01_to_char', 'name_id': 'dwrun_sql_431_transform_function_01_to_char', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select ename,to_char(sal,\\'L99999.99\\') salary from {tb_name} where deptno=20;\"'}, 'expected_result': [['ALLEN', '1991-02-20'], ['JONES2', '2000-04-02'], ['MARTIN', '2001-09-28'], ['KING', '1999-11-17'], ['JAMES', '1995-12-03'], ['MILLER', '1982-01-23']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[转换函数_02_to_date]",
+      "uid" : "a4e683c7ba40298",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388395537,
+        "stop" : 1609388412357,
+        "duration" : 16820
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '转换函数_02_to_date', 'name_id': 'dwrun_sql_431_transform_function_02_to_date', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select ename,hiredate from {tb_name} where hiredate>to_date(\\'1981-12-31\\',\\'YYYY-MM-DD\\');\"'}, 'expected_result': [['ALLEN', '1991-02-20'], ['JONES2', '2000-04-02'], ['MARTIN', '2001-09-28'], ['KING', '1999-11-17'], ['JAMES', '1995-12-03'], ['MILLER', '1982-01-23']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[转换函数_03_to_number]",
+      "uid" : "38261a1747dbdb21",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609388412495,
+        "stop" : 1609388413275,
+        "duration" : 780
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '转换函数_03_to_number', 'name_id': 'dwrun_sql_431_transform_function_03_to_number', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select ename,sal from {tb_name} where sal>to_number(\\'$3000.00\\',\\'$99999.99\\');\"'}, 'expected_result': [['KING', '5000.6']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[字符函数_01_upper]",
+      "uid" : "d8bdbc37e15d09ec",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388413469,
+        "stop" : 1609388430633,
+        "duration" : 17164
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '字符函数_01_upper', 'name_id': 'dwrun_sql_433_string_function_01_upper', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select empno,sal,job,ename from {tb_name} where upper(ename)=\\'SMITH\\';\"'}, 'expected_result': [['2222', '800', 'CLERK', 'SMITH'], ['7369', '800.5', 'CLERK', 'SMITH'], ['7379', '800', 'CLERK', 'SMITH']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[字符函数_02_concat]",
+      "uid" : "2de9c7456fadf262",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388430826,
+        "stop" : 1609388447537,
+        "duration" : 16711
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '字符函数_02_concat', 'name_id': 'dwrun_sql_433_string_function_02_concat', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select concat(concat(ename,\\',\\'),sal) from {tb_name} where deptno=10;\"'}, 'expected_result': [['CLARK,2450.50'], ['KING,5000.60'], ['MILLER,1300.00']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[字符函数_03_instr]",
+      "uid" : "97e4b38c53629e85",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388447665,
+        "stop" : 1609388464249,
+        "duration" : 16584
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '字符函数_03_instr', 'name_id': 'dwrun_sql_433_string_function_03_instr', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select instr(\\'Great Wall In China\\',\\'China\\') from {tb_name} where deptno=10;\"'}, 'expected_result': [['15'], ['15'], ['15']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[字符函数_04_substr]",
+      "uid" : "3deb8a6db01ca939",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388464413,
+        "stop" : 1609388481023,
+        "duration" : 16610
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '字符函数_04_substr', 'name_id': 'dwrun_sql_433_string_function_04_substr', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select substr(\\'Great Wall In China\\',7,30) from {tb_name} where deptno=10;\"'}, 'expected_result': [['Wall In China'], ['Wall In China'], ['Wall In China']]}" ]
+    }, {
+      "name" : "test_plsql_single_function[字符函数_05_Rpad]",
+      "uid" : "9e2ce122d5ca5b77",
+      "parentUid" : "f035d39bac029a4549bab777377be931",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388481224,
+        "stop" : 1609388497985,
+        "duration" : 16761
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'module_name': 'SQL 单行函数使用', 'module_case_name': '字符函数_05_Rpad', 'name_id': 'dwrun_sql_433_string_function_05_Rpad', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql'], 'exec_sql': {'sql': 'f\"select Rpad(\\'In China\\',19,\\'Great Wall \\') from {tb_name} where deptno=10;\"'}, 'expected_result': [['In ChinaGreat Wall'], ['In ChinaGreat Wall'], ['In ChinaGreat Wall']]}" ]
+    } ],
+    "uid" : "f035d39bac029a4549bab777377be931"
+  } ],
+  "name" : "behaviors"
+}

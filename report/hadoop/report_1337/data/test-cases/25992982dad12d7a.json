@@ -1,0 +1,190 @@
+{
+  "uid" : "25992982dad12d7a",
+  "name" : "test_plsql_create_drop_table[删除表操作_drop_01]",
+  "fullName" : "cases.hadoop.plsql.testplsql.TestPLSqlManipulateData#test_plsql_create_drop_table",
+  "historyId" : "8b87f4c1d4b544448b7469f0e0ae4f94",
+  "time" : {
+    "start" : 1609312021289,
+    "stop" : 1609312030385,
+    "duration" : 9096
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_Class__pytest_setup_method",
+    "time" : {
+      "start" : 1609312021073,
+      "stop" : 1609312021289,
+      "duration" : 216
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class",
+    "time" : {
+      "start" : 1609311358748,
+      "stop" : 1609311359810,
+      "duration" : 1062
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "初始化表及数据",
+      "time" : {
+        "start" : 1609312021289,
+        "stop" : 1609312021289,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取数据库连接id",
+      "time" : {
+        "start" : 1609312021289,
+        "stop" : 1609312021408,
+        "duration" : 119
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取对应的表、sql语句、语句执行顺序及预期结果",
+      "time" : {
+        "start" : 1609312021408,
+        "stop" : 1609312021408,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "按顺序执行sql语句，将返回结果与预期结果做对比",
+      "time" : {
+        "start" : 1609312021408,
+        "stop" : 1609312030385,
+        "duration" : 8977
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "_Class__pytest_setup_method::0",
+    "time" : {
+      "start" : 1609312030386,
+      "stop" : 1609312030386,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class::0",
+    "time" : {
+      "start" : 1609312030387,
+      "stop" : 1609312030387,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "SQL 创建和管理表"
+  }, {
+    "name" : "parentSuite",
+    "value" : "cases.hadoop.plsql"
+  }, {
+    "name" : "suite",
+    "value" : "testplsql"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPLSqlManipulateData"
+  }, {
+    "name" : "host",
+    "value" : "SF-4359"
+  }, {
+    "name" : "thread",
+    "value" : "38116-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "cases.hadoop.plsql.testplsql"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "cases",
+    "value" : "{'module_name': 'SQL 创建和管理表', 'module_case_name': '删除表操作_drop_01', 'name_id': 'dwrun_sql_002_drop_table_01', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott04', 'exec_order': ['sql', 'check_td', 'sql1', 'check_td1'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "25992982dad12d7a.json",
+  "parameterValues" : [ "{'module_name': 'SQL 创建和管理表', 'module_case_name': '删除表操作_drop_01', 'name_id': 'dwrun_sql_002_drop_table_01', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott04', 'exec_order': ['sql', 'check_td', 'sql1', 'check_td1'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}" ]
+}

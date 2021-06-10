@@ -1,0 +1,359 @@
+- module_name: SQL 基本查询语句
+  module_case_name: where中使用IN操作符
+  name_id: dwrun_sql_003_where_in
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where中使用IN操作符
+    sql: f"select ename,sal,job from {tb_name1} where job IN ('CLERK','MANAGER');"
+  expected_result:
+    data: [["SMITH","800","CLERK"],["SMITH","800.5","CLERK"],["SMITH","800","CLERK"],["JONES2","2975.3","MANAGER"],["BLAKE","2850","MANAGER"],["CLARK","2450.5","MANAGER"],["JAMES","950","CLERK"],["MILLER","1300","CLERK"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where中使用IS NULL操作符
+  name_id: dwrun_sql_004_where_isnull
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where中使用IS NULL操作符
+    sql: f"select ename,mgr from {tb_name1} where mgr IS NULL;"
+  expected_result:
+    data: [["KING", ""]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where子句中使用between....and操作符
+  name_id: dwrun_sql_005_where_between_and
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where子句中使用between....and操作符
+    sql: f"select ename,sal,job,deptno from {tb_name1} where sal between 2000 and 3000;"
+  expected_result:
+    data: [["JONES2","2975.3","MANAGER","20"],["BLAKE","2850","MANAGER","30"],["CLARK","2450.5","MANAGER","10"],["SCOTT1","3000","ANALYST","20"],["FORD","3000","ANALYST","20"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where子句中使用like操作符
+  name_id: dwrun_sql_006_where_like
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where子句中使用like操作符
+    sql: f"select ename,sal from {tb_name1} where ename like 'S%';"
+  expected_result:
+    data: [["SMITH","800"],["SMITH","800.5"],["SMITH","800"],["SCOTT1","3000"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where子句中使用日期
+  name_id: dwrun_sql_007_where_date
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where子句中使用日期
+    sql: f"select ename,sal,hiredate from {tb_name1} where hiredate>'1990-01-23';"
+  expected_result:
+    data: [["ALLEN","1600","1991-02-20"],["JONES2","2975.3","2000-04-02"],["MARTIN","1250","2001-09-28"],["KING","5000.6","1999-11-17"],["JAMES","950","1995-12-03"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where子句中使用数值_01
+  name_id: dwrun_sql_008_where_number_01
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where子句中使用数值
+    sql: f"select ename,job,sal from {tb_name1} where sal > 2000;"
+  expected_result:
+    data: [["JONES2","MANAGER","2975.3"],["BLAKE","MANAGER","2850"],["CLARK","MANAGER","2450.5"],["SCOTT1","ANALYST","3000"],["KING","PRESIDENT","5000.6"],["FORD","ANALYST","3000"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where子句中使用数值_02
+  name_id: dwrun_sql_008_where_number_02
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where子句中使用数值
+    sql: f"select ename,job,sal from {tb_name1} where sal > '2000';"
+  expected_result:
+    data: [["JONES2","MANAGER","2975.3"],["BLAKE","MANAGER","2850"],["CLARK","MANAGER","2450.5"],["SCOTT1","ANALYST","3000"],["KING","PRESIDENT","5000.6"],["FORD","ANALYST","3000"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where子句中使用字符值_01
+  name_id: dwrun_sql_009_where_str_01
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # where子句中使用字符值
+    sql: f"select ename,job,sal from {tb_name1} where job='MANAGER';"
+  expected_result:
+    data: [["JONES2","MANAGER","2975.3"],["BLAKE","MANAGER","2850"],["CLARK","MANAGER","2450.5"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: where子句中使用字符值_02
+  name_id: dwrun_sql_009_where_str_02
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    #
+    sql: f"select ename,job,sal from {tb_name1} where job='MANAGER' and ename like 'BLAKE%';"
+  expected_result:
+    data: [["BLAKE","MANAGER","2850"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 逻辑操作符AND_OR_NOT_01
+  name_id: dwrun_sql_010_where_logic_01
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 逻辑操作符AND_OR_NOT
+    sql: f"select ename,sal,job,deptno from {tb_name1} where deptno=20 AND job='CLERK';"
+  expected_result:
+    data: [["SMITH","800","CLERK","20"],["SMITH","800.5","CLERK","20"],["SMITH","800","CLERK","20"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 逻辑操作符AND_OR_NOT_02
+  name_id: dwrun_sql_010_where_logic_02
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 逻辑操作符AND_OR_NOT
+    sql: f"select ename,sal,job,deptno from {tb_name1} where sal>2800 OR job='MANAGER';"
+  expected_result:
+    data: [["JONES2","2975.3","MANAGER","20"],["BLAKE","2850","MANAGER","30"],["CLARK","2450.5","MANAGER","10"],["SCOTT1","3000","ANALYST","20"],["KING","5000.6","PRESIDENT","10"],["FORD","3000","ANALYST","20"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 逻辑操作符AND_OR_NOT_03
+  name_id: dwrun_sql_010_where_logic_03
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 逻辑操作符AND_OR_NOT
+    sql: f"select ename,sal,comm,deptno from {tb_name1} where comm IS NOT NULL;"
+  expected_result:
+    data: [["ALLEN","1600.6","300","30"],["ALLEN","1600","300","30"],["WARD","1250","500","30"],["MARTIN","1250","1400","30"],["TURNER","1500","0","30"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 排除重复行
+  name_id: dwrun_sql_011_distinct
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 排除重复行
+    sql: f"select distinct deptno,job from {tb_name1};"
+  expected_result:
+    data: [["10","PRESIDENT"],["30","CLERK"],["10","MANAGER"],["30","MANAGER"],["20","CLERK"],["30","SALESMAN"],["20","ANALYST"],["10","CLERK"],["20","MANAGER"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 使用||连接字符串
+  name_id: dwrun_sql_012_str_connectors
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 使用||连接字符串
+    sql: f"select ename || '''' || 's job is ' || job ename_job,ename,job from {tb_name1};"
+  expected_result:
+    data: [["SMITHs job is CLERK","SMITH","CLERK"],["SMITHs job is CLERK","SMITH","CLERK"],["SMITHs job is CLERK","SMITH","CLERK"],["ALLENs job is SALESMAN","ALLEN","SALESMAN"],["ALLENs job is SALESMAN","ALLEN","SALESMAN"],["WARDs job is SALESMAN","WARD","SALESMAN"],["JONES2s job is MANAGER","JONES2","MANAGER"],["MARTINs job is SALESMAN","MARTIN","SALESMAN"],["BLAKEs job is MANAGER","BLAKE","MANAGER"],["CLARKs job is MANAGER","CLARK","MANAGER"],["SCOTT1s job is ANALYST","SCOTT1","ANALYST"],["KINGs job is PRESIDENT","KING","PRESIDENT"],["TURNERs job is SALESMAN","TURNER","SALESMAN"],["JAMESs job is CLERK","JAMES","CLERK"],["FORDs job is ANALYST","FORD","ANALYST"],["MILLERs job is CLERK","MILLER","CLERK"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 使用TO_CHAR函数定制日期显示格式
+  name_id: dwrun_sql_013_to_char
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 使用TO_CHAR函数定制日期显示格式
+    sql: f"select concat(concat(ename, '''s salary is '),sal) concat_ename_sals,ename,sal from {tb_name1};"
+  expected_result:
+    data: [["SMITH","1980/12/17"],["SMITH","1980/12/17"],["SMITH","1980/12/17"],["ALLEN","1981/02/20"],["ALLEN","1991/02/20"],["WARD","1981/02/22"],["JONES2","2000/04/02"],["MARTIN","2001/09/28"],["BLAKE","1981/05/01"],["CLARK","1981/06/09"],["SCOTT1","1981/12/03"],["KING","1999/11/17"],["TURNER","1981/09/08"],["JAMES","1995/12/03"],["FORD","1981/12/03"],["MILLER","1982/01/23"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 使用函数CONCAT连接字符串
+  name_id: dwrun_sql_014_concat
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 使用函数CONCAT连接字符串
+    sql: f"select concat(concat(ename, '''s salary is '),sal) concat_ename_sals,ename,sal from {tb_name1};"
+  expected_result:
+    data: [["SMITHs salary is 800.00","SMITH","800"],["SMITHs salary is 800.50","SMITH","800.5"],["SMITHs salary is 800.00","SMITH","800"],["ALLENs salary is 1600.60","ALLEN","1600.6"],["ALLENs salary is 1600.00","ALLEN","1600"],["WARDs salary is 1250.00","WARD","1250"],["JONES2s salary is 2975.30","JONES2","2975.3"],["MARTINs salary is 1250.00","MARTIN","1250"],["BLAKEs salary is 2850.00","BLAKE","2850"],["CLARKs salary is 2450.50","CLARK","2450.5"],["SCOTT1s salary is 3000.00","SCOTT1","3000"],["KINGs salary is 5000.60","KING","5000.6"],["TURNERs salary is 1500.00","TURNER","1500"],["JAMESs salary is 950.00","JAMES","950"],["FORDs salary is 3000.00","FORD","3000"],["MILLERs salary is 1300.00","MILLER","1300"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 使用列别名
+  name_id: dwrun_sql_015_alias
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 使用列别名
+    sql: f"select ename "Name",sal*12 "Annual Salary" from {tb_name1};"
+  expected_result:
+    data: [["SMITH","9600"],["SMITH","9606"],["SMITH","9600"],["ALLEN","19207.2"],["ALLEN","19200"],["WARD","15000"],["JONES2","35703.6"],["MARTIN","15000"],["BLAKE","34200"],["CLARK","29406"],["SCOTT1","36000"],["KING","60007.2"],["TURNER","18000"],["JAMES","11400"],["FORD","36000"],["MILLER","15600"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 使用算术运算符
+  name_id: dwrun_sql_016_mathematics
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 使用算术运算符
+    sql: f"select ename,sal,sal*2 "tatal" from {tb_name1};"
+  expected_result:
+    data: [["SMITH","800","1600"],["SMITH","800.5","1601"],["SMITH","800","1600"],["ALLEN","1600.6","3201.2"],["ALLEN","1600","3200"],["WARD","1250","2500"],["JONES2","2975.3","5950.6"],["MARTIN","1250","2500"],["BLAKE","2850","5700"],["CLARK","2450.5","4901"],["SCOTT1","3000","6000"],["KING","5000.6","10001.2"],["TURNER","1500","3000"],["JAMES","950","1900"],["FORD","3000","6000"],["MILLER","1300","2600"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 用NVL2函数处理的情况
+  name_id: dwrun_sql_017_nvl2
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 用NVL2函数处理的情况
+    sql: f"select ename,sal,comm, nvl2(comm,sal+comm,sal) nvl2 from {tb_name1};"
+  expected_result:
+    data: [["SMITH","800","","800"],["SMITH","800.5","","800.5"],["SMITH","800","","800"],["ALLEN","1600.6","300","1900.6"],["ALLEN","1600","300","1900"],["WARD","1250","500","1750"],["JONES2","2975.3","","2975.3"],["MARTIN","1250","1400","2650"],["BLAKE","2850","","2850"],["CLARK","2450.5","","2450.5"],["SCOTT1","3000","","3000"],["KING","5000.6","","5000.6"],["TURNER","1500","0","1500"],["JAMES","950","","950"],["FORD","3000","","3000"],["MILLER","1300","","1300"]]
+    header:
+
+- module_name: SQL 基本查询语句
+  module_case_name: 用NVL函数处理NULL的情况
+  name_id: dwrun_sql_018_nvl
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: emp
+   tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 用NVL函数处理NULL的情况
+    sql: f"select ename,sal,comm,sal+nvl(comm,0) nvl from {tb_name1};"
+  expected_result:
+    data: [["SMITH","800","","800"],["SMITH","800.5","","800.5"],["SMITH","800","","800"],["ALLEN","1600.6","300","1900.6"],["ALLEN","1600","300","1900"],["WARD","1250","500","1750"],["JONES2","2975.3","","2975.3"],["MARTIN","1250","1400","2650"],["BLAKE","2850","","2850"],["CLARK","2450.5","","2450.5"],["SCOTT1","3000","","3000"],["KING","5000.6","","5000.6"],["TURNER","1500","0","1500"],["JAMES","950","","950"],["FORD","3000","","3000"],["MILLER","1300","","1300"]]
+    header:

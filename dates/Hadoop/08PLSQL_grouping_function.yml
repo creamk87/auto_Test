@@ -1,0 +1,236 @@
+- module_name: SQL 数据分组函数使用
+  module_case_name: AVG和SUM函数
+  name_id: dwrun_sql_204_avg_sum
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # AVG和SUM函数
+    sql: f"select avg(sal) 平均工资,sum(sal) 总计工资 from {tb_name1};"
+  expected_result:
+    data: [['1945.46875', '31127.5']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: COUNT函数
+  name_id: dwrun_sql_205_count
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # COUNT函数
+    sql: f"select count(*) 雇员总数 from {tb_name1};"
+  expected_result:
+    data: [['16']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: CUBE 复合列
+  name_id: dwrun_sql_206_cube
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # CUBE 复合列
+    sql: f"SELECT deptno, job, AVG(sal) as avgsal FROM {tb_name1} GROUP BY cube((deptno, job));"
+  expected_result:
+    data: [['20', 'MANAGER', '2975.3'], ['', 'PRESIDENT', '5000.6'], ['', '', '1945.46875'], ['10', 'PRESIDENT', '5000.6'], ['', 'SALESMAN', '1440.12'], ['30', 'CLERK', '950'], ['10', '', '2917.03333'], ['20', 'CLERK', '800.16667'], ['', 'ANALYST', '3000'], ['30', 'SALESMAN', '1440.12'], ['20', '', '1895.96667'], ['10', 'CLERK', '1300'], ['', 'MANAGER', '2758.6'], ['30', '', '1571.51429'], ['', 'CLERK', '930.1'], ['20', 'ANALYST', '3000'], ['30', 'MANAGER', '2850'], ['10', 'MANAGER', '2450.5']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: CUBE_横向统计、纵向统计和总计统计
+  name_id: dwrun_sql_207
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # CUBE_横向统计、纵向统计和总计统计
+    sql: f"select deptno,job,avg(sal) from {tb_name1} group by cube(deptno,job);"
+  expected_result:
+    data: [['20', 'MANAGER', '2975.3'], ['', 'PRESIDENT', '5000.6'], ['', '', '1945.46875'], ['10', 'PRESIDENT', '5000.6'], ['', 'SALESMAN', '1440.12'], ['30', 'CLERK', '950'], ['10', '', '2917.03333'], ['20', 'CLERK', '800.16667'], ['', 'ANALYST', '3000'], ['30', 'SALESMAN', '1440.12'], ['20', '', '1895.96667'], ['10', 'CLERK', '1300'], ['', 'MANAGER', '2758.6'], ['30', '', '1571.51429'], ['', 'CLERK', '930.1'], ['20', 'ANALYST', '3000'], ['30', 'MANAGER', '2850'], ['10', 'MANAGER', '2450.5']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Group_By_单列分组函数
+  name_id: dwrun_sql_208_groupby
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Group_By_单列分组函数
+    sql: f"select deptno 部门代码,avg(sal) 部门平均工资 from {tb_name1} group by deptno order by deptno;"
+  expected_result:
+    data: [['10', '2917.03333'], ['20', '1895.96667'], ['30', '1571.51429']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Group_By_多列分组函数
+  name_id: dwrun_sql_209_groupby
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Group_By_多列分组函数
+    sql: f"select deptno,job,avg(sal),max(sal) from {tb_name1} group by deptno,job order by avg(sal) desc;"
+  expected_result:
+    data: [['10', 'PRESIDENT', '5000.6', '5000.6'], ['20', 'ANALYST', '3000', '3000'], ['20', 'MANAGER', '2975.3', '2975.3'], ['30', 'MANAGER', '2850', '2850'], ['10', 'MANAGER', '2450.5', '2450.5'], ['30', 'SALESMAN', '1440.12', '1600.6'], ['10', 'CLERK', '1300', '1300'], ['30', 'CLERK', '950', '950'], ['20', 'CLERK', '800.16667', '800.5']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Group_By_分组排序函数
+  name_id: dwrun_sql_210_groupby
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Group_By_分组排序函数
+    sql: f"select deptno,sum(sal) from {tb_name1} group by deptno order by sum(sal) DESC;"
+  expected_result:
+    data: [['20', '11375.8'], ['30', '11000.6'], ['10', '8751.1']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: GROUPING_函数
+  name_id: dwrun_sql_211_grouping
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # GROUPING_函数
+    sql: f"select deptno,job,sum(sal) sal1,grouping(deptno),grouping(job) from {tb_name1} group by rollup(deptno,job) order by sal1;"
+  expected_result:
+    data: [['20', 'MANAGER', '2975.3', '0', '0'], ['', '', '31127.5', '1', '1'], ['10', 'PRESIDENT', '5000.6', '0', '0'], ['30', 'CLERK', '950', '0', '0'], ['10', '', '8751.1', '0', '1'], ['20', 'CLERK', '2400.5', '0', '0'], ['30', 'SALESMAN', '7200.6', '0', '0'], ['20', '', '11375.8', '0', '1'], ['10', 'CLERK', '1300', '0', '0'], ['30', '', '11000.6', '0', '1'], ['20', 'ANALYST', '6000', '0', '0'], ['30', 'MANAGER', '2850', '0', '0'], ['10', 'MANAGER', '2450.5', '0', '0']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Groupping_sets_连接分组
+  name_id: dwrun_sql_212_grouping_sets
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Groupping_sets_连接分组
+    sql: f"select deptno,job,mgr,sum(sal) from {tb_name1} group by grouping sets((deptno),(job,mgr));"
+  expected_result:
+    data: [['30', '', '', '11000.6'], ['', 'CLERK', '7782', '1300'], ['', 'PRESIDENT', '', '5000.6'], ['20', '', '', '11375.8'], ['', 'ANALYST', '7788', '3000'], ['', 'CLERK', '7698', '950'], ['', 'MANAGER', '7839', '8275.8'], ['', 'CLERK', '7902', '2400.5'], ['10', '', '', '8751.1'], ['', 'ANALYST', '7566', '3000'], ['', 'SALESMAN', '7698', '7200.6']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Having_限制分组结果
+  name_id: dwrun_sql_213_having
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Having_限制分组结果
+    sql: f"select deptno,avg(sal),max(sal) from {tb_name1} group by deptno having avg(sal)<2500;"
+  expected_result:
+    data: [['30', '1571.51429', '2850'], ['20', '1895.96667', '3000']]
+    header:
+
+
+
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Having_限制分组结果
+  name_id: dwrun_sql_213_having
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Having_限制分组结果
+    sql: f"select deptno,avg(sal),max(sal) from {tb_name1} group by deptno having avg(sal)<2500;"
+  expected_result:
+    data: [['30', '1571.51429', '2850'], ['20', '1895.96667', '3000']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Having_限制分组结果
+  name_id: dwrun_sql_213_having
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Having_限制分组结果
+    sql: f"select deptno,avg(sal),max(sal) from {tb_name1} group by deptno having avg(sal)<2500;"
+  expected_result:
+    data: [['30', '1571.51429', '2850'], ['20', '1895.96667', '3000']]
+    header:
+
+- module_name: SQL 数据分组函数使用
+  module_case_name: Having_限制分组结果
+  name_id: dwrun_sql_213_having
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # Having_限制分组结果
+    sql: f"select deptno,avg(sal),max(sal) from {tb_name1} group by deptno having avg(sal)<2500;"
+  expected_result:
+    data: [['30', '1571.51429', '2850'], ['20', '1895.96667', '3000']]
+    header:

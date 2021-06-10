@@ -1,0 +1,192 @@
+{
+  "uid" : "8ab4e50e40701a24",
+  "name" : "test_plsql_update_insert_delete[使用子查询_insert_select_01]",
+  "fullName" : "cases.hadoop.plsql.testplsql.TestPLSqlManipulateData#test_plsql_update_insert_delete",
+  "historyId" : "ca5f2b46f194d39ef18bb502d7f8c998",
+  "time" : {
+    "start" : 1609311797640,
+    "stop" : 1609311848110,
+    "duration" : 50470
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_Class__pytest_setup_method",
+    "time" : {
+      "start" : 1609311797514,
+      "stop" : 1609311797639,
+      "duration" : 125
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class",
+    "time" : {
+      "start" : 1609311358748,
+      "stop" : 1609311359810,
+      "duration" : 1062
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "初始化表及数据",
+      "time" : {
+        "start" : 1609311797640,
+        "stop" : 1609311828357,
+        "duration" : 30717
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取数据库连接id",
+      "time" : {
+        "start" : 1609311828357,
+        "stop" : 1609311828454,
+        "duration" : 97
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取对应的表、sql语句、语句执行顺序及预期结果",
+      "time" : {
+        "start" : 1609311828454,
+        "stop" : 1609311828454,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "按顺序执行sql语句，将返回结果与预期结果做对比",
+      "time" : {
+        "start" : 1609311828454,
+        "stop" : 1609311848110,
+        "duration" : 19656
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "_Class__pytest_setup_method::0",
+    "time" : {
+      "start" : 1609311848112,
+      "stop" : 1609311848112,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class::0",
+    "time" : {
+      "start" : 1609312030387,
+      "stop" : 1609312030387,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "SQL 操纵数据语言查询"
+  }, {
+    "name" : "parentSuite",
+    "value" : "cases.hadoop.plsql"
+  }, {
+    "name" : "suite",
+    "value" : "testplsql"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPLSqlManipulateData"
+  }, {
+    "name" : "host",
+    "value" : "SF-4359"
+  }, {
+    "name" : "thread",
+    "value" : "38116-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "cases.hadoop.plsql.testplsql"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "cases",
+    "value" : "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '使用子查询_insert_select_01', 'name_id': 'dwrun_sql_405_insert_select_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"insert into (select empno,ename,sal,deptno from {tb_name} where deptno>20) values(1112,\\'MARY\\',2000,30);\"', 'check_td': 'f\"select * from {tb_name} where empno=1112;\"'}, 'expected_result': [['1112', 'MARY', 'MR', '', '', '2000', '', '30']]}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8ab4e50e40701a24.json",
+  "parameterValues" : [ "{'module_name': 'SQL 操纵数据语言查询', 'module_case_name': '使用子查询_insert_select_01', 'name_id': 'dwrun_sql_405_insert_select_01', 'isInitialized': 1, 'sqltype': 'plsql', 'tb_name': 'emp', 'exec_order': ['sql', 'check_td'], 'exec_sql': {'sql': 'f\"insert into (select empno,ename,sal,deptno from {tb_name} where deptno>20) values(1112,\\'MARY\\',2000,30);\"', 'check_td': 'f\"select * from {tb_name} where empno=1112;\"'}, 'expected_result': [['1112', 'MARY', 'MR', '', '', '2000', '', '30']]}" ]
+}

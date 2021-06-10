@@ -1,0 +1,300 @@
+{
+  "uid" : "7175157e740bd39e",
+  "name" : "test_plsql_create_drop_table[创建普通表_create_02]",
+  "fullName" : "cases.hadoop.plsql.testplsql.TestPLSqlManipulateData#test_plsql_create_drop_table",
+  "historyId" : "b01cf12e836dd502acba31f611dab4fe",
+  "time" : {
+    "start" : 1609322108807,
+    "stop" : 1609322115734,
+    "duration" : 6927
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_Class__pytest_setup_method",
+    "time" : {
+      "start" : 1609322108653,
+      "stop" : 1609322108807,
+      "duration" : 154
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class",
+    "time" : {
+      "start" : 1609322102661,
+      "stop" : 1609322103620,
+      "duration" : 959
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "初始化表及数据",
+      "time" : {
+        "start" : 1609322108807,
+        "stop" : 1609322108807,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取数据库连接id",
+      "time" : {
+        "start" : 1609322108807,
+        "stop" : 1609322108937,
+        "duration" : 130
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取对应的表、sql语句、语句执行顺序及预期结果",
+      "time" : {
+        "start" : 1609322108937,
+        "stop" : 1609322108937,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "按顺序执行sql语句，将返回结果与预期结果做对比",
+      "time" : {
+        "start" : 1609322108937,
+        "stop" : 1609322115734,
+        "duration" : 6797
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "_Class__pytest_setup_method::0",
+    "time" : {
+      "start" : 1609322115736,
+      "stop" : 1609322115736,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_class::0",
+    "time" : {
+      "start" : 1609322124400,
+      "stop" : 1609322134442,
+      "duration" : 10042
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "SQL 创建和管理表"
+  }, {
+    "name" : "tag",
+    "value" : "delete"
+  }, {
+    "name" : "parentSuite",
+    "value" : "cases.hadoop.plsql"
+  }, {
+    "name" : "suite",
+    "value" : "testplsql"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPLSqlManipulateData"
+  }, {
+    "name" : "host",
+    "value" : "SF-4359"
+  }, {
+    "name" : "thread",
+    "value" : "35428-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "cases.hadoop.plsql.testplsql"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "cases",
+    "value" : "{'module_name': 'SQL 创建和管理表', 'module_case_name': '创建普通表_create_02', 'name_id': 'dwrun_sql_001_create_table_02', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott03', 'exec_order': ['sql1', 'check_td1', 'sql', 'check_td'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(20));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "8478040e384fbd78",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609321703578,
+        "stop" : 1609321708528,
+        "duration" : 4950
+      }
+    }, {
+      "uid" : "8d11aed6658d6246",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609321576595,
+        "stop" : 1609321581423,
+        "duration" : 4828
+      }
+    }, {
+      "uid" : "4e2f5656942adb8d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609320543646,
+        "stop" : 1609320549165,
+        "duration" : 5519
+      }
+    }, {
+      "uid" : "f78ff3cc447da6d3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609317256794,
+        "stop" : 1609317262032,
+        "duration" : 5238
+      }
+    }, {
+      "uid" : "935ff66a3845ce9c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609316814754,
+        "stop" : 1609316819631,
+        "duration" : 4877
+      }
+    }, {
+      "uid" : "61543a17259ec65b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609316587267,
+        "stop" : 1609316592302,
+        "duration" : 5035
+      }
+    }, {
+      "uid" : "c0fcf6c6a5a44795",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609316453480,
+        "stop" : 1609316460394,
+        "duration" : 6914
+      }
+    }, {
+      "uid" : "9f21cb56e0164555",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609316231899,
+        "stop" : 1609316240335,
+        "duration" : 8436
+      }
+    }, {
+      "uid" : "7e8634421a473b4f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609316015624,
+        "stop" : 1609316024261,
+        "duration" : 8637
+      }
+    }, {
+      "uid" : "4252a4ea49c626ac",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609315941456,
+        "stop" : 1609315953179,
+        "duration" : 11723
+      }
+    }, {
+      "uid" : "c3e6c3c32c03fa38",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609315865190,
+        "stop" : 1609315873855,
+        "duration" : 8665
+      }
+    }, {
+      "uid" : "513f0c79db2b5ed2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609315684283,
+        "stop" : 1609315689248,
+        "duration" : 4965
+      }
+    }, {
+      "uid" : "b8d3f112386d6d2c",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 执行sql异常,返回结果：\n{'result': 1, 'msg': 'ERROR 1013 (42M04): Table already exists. tableName=AUTOTEST_ROC_SCOTT03 Query: create table scott03(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(20)); Parameters: []', 'detilMsg': 'java.sql.SQLException: ERROR 1013 (42M04): Table already exists. tableName=AUTOTEST_ROC_SCOTT03 Query: create table scott03(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(20)); Parameters: []\\n\\tat org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:392)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.update(StatTimeOutQueryRunner.java:108)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.update(StatTimeOutQueryRunner.java:81)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.executeUpdate(SQLExecutor.java:199)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.execute(SQLExecutor.java:71)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$FastClassBySpringCGLIB$$87a3a589.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$EnhancerBySpringCGLIB$$fc0ac4d4.execute(<generated>)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl.exec(SQLParseServiceImpl.java:276)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$FastClassBySpringCGLIB$$b336c078.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:667)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$EnhancerBySpringCGLIB$$ecb8e301.exec(<generated>)\\n\\tat com.sefonsoft.sdcdw.resource.dwrun.SQLParseResource.exec(SQLParseResource.java:232)\\n\\tat sun.reflect.GeneratedMethodAccessor241.invoke(Unknown Source)\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\n\\tat java.lang.reflect.Method.invoke(Method.java:498)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.SessionContextFilter.doFilter(SessionContextFilter.java:40)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.AuthFilter.doFilter(AuthFilter.java:139)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\n\\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\\n\\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\n\\tat java.lang.Thread.run(Thread.java:745)\\n', 'duration': 0.01, 'head': None, 'data': None, 'affectNum': -1}",
+      "time" : {
+        "start" : 1609312020415,
+        "stop" : 1609312020648,
+        "duration" : 233
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ "delete" ]
+  },
+  "source" : "7175157e740bd39e.json",
+  "parameterValues" : [ "{'module_name': 'SQL 创建和管理表', 'module_case_name': '创建普通表_create_02', 'name_id': 'dwrun_sql_001_create_table_02', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott03', 'exec_order': ['sql1', 'check_td1', 'sql', 'check_td'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(20));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}" ]
+}

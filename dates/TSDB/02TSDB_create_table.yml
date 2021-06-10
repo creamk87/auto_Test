@@ -1,0 +1,272 @@
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 有备注创建和检查一个新的表
+ name_id: create_table_01
+ isRun: 1
+ db_tb_name:
+   db_name: autodb
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_pre:
+  - create database if not exists {db_name};
+  - use {db_name};
+ exec_sql:
+  sql: CREATE TABLE {tb_name}(Location VARCHAR(20) COMMENT '用户编号',Equipment VARCHAR(20),Name CHAR(32),Vector1 int,timestamp datetime);
+  check_td: use {db_name};
+  check_td1: show tables;
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建和检查一个新的库if not exists
+ name_id: create_database_02
+ isRun: 1
+ db_tb_name:
+   db_name: rocdb
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个全中文名称的库
+ name_id: create_database_03_中文
+ isRun: 1
+ db_tb_name:
+   db_name: 中文库元
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建两个全中文名称的库（中文同音但文字不同）
+ name_id: create_database_04_中文
+ isRun: 1
+ db_tb_name:
+   db_name: 中文库元
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个纯名称（数字或英文）的库
+ name_id: create_database_05
+ isRun: 1
+ db_tb_name:
+   db_name: "19901212001"
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个包含英文和数字混合的库且长度<=48位
+ name_id: create_database_06
+ isRun: 1
+ db_tb_name:
+   db_name: aBcdef123sdfa23ASDFA2343jsdkfsdfsdfksdf00A
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个包含英文和数字混合的库且长度>48位
+ name_id: create_database_07
+ isRun: 1
+ db_tb_name:
+   db_name: aBcdef123sdfa23ASDFA2343jsdkfsdfsdfksdf00ABCDEFSFSDFS1212A
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个包含特殊字符的库1
+ name_id: create_database_08
+ isRun: 1
+ db_tb_name:
+   db_name: A_rocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个包含特殊字符的库2
+ name_id: create_database_09
+ isRun: 1
+ db_tb_name:
+   db_name: b+rocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个包含特殊字符的库3
+ name_id: create_database_10
+ isRun: 1
+ db_tb_name:
+   db_name: C'rocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个包含特殊字符的库4
+ name_id: create_database_11
+ isRun: 1
+ db_tb_name:
+   db_name: D'rocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个包含特殊字符的库5
+ name_id: create_database_11
+ isRun: 1
+ db_tb_name:
+   db_name: e#-rocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个库语法有错误1
+ name_id: create_database_12
+ isRun: 1
+ db_tb_name:
+   db_name: rocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create database if not exists test_1  test2{db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个库语法有错误2
+ name_id: create_database_13
+ isRun: 1
+ db_tb_name:
+   db_name: rocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: create databaseif not existstest_!1{db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}
+
+-
+ module_name: tsdb_ddl_建表
+ module_case_name: 创建一个库语法有错误3
+ name_id: create_database_14
+ isRun: 1
+ db_tb_name:
+   db_name: test_abrocDDB
+   tb_name: roctb
+ exec_order:
+  - sql
+  - check_td
+  - sql1
+  - check_td
+ exec_sql:
+  sql: creat databases if not exists {db_name}
+  check_td: show databases
+  sql1: drop database if exists {db_name}

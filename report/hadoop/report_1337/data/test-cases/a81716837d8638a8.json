@@ -1,0 +1,199 @@
+{
+  "uid" : "a81716837d8638a8",
+  "name" : "test_plsql_create_drop_table[删除表操作_drop_01]",
+  "fullName" : "cases.hadoop.plsql.testplsql.TestPLSqlManipulateData#test_plsql_create_drop_table",
+  "historyId" : "8b87f4c1d4b544448b7469f0e0ae4f94",
+  "time" : {
+    "start" : 1609316240523,
+    "stop" : 1609316250291,
+    "duration" : 9768
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: eval() arg 1 must be a string, bytes or code object",
+  "statusTrace" : "cls = <class 'cases.hadoop.plsql.testplsql.TestPLSqlManipulateData'>\n\n    @classmethod\n    def teardown_class(cls):\n        \"\"\"\n        用例执行完成后，删除本次测试新建的库\n        \"\"\"\n        # cls.conn_id = hp.sdc_dw.get_dbName_connId(db_name=cls.db_name)\n        # print(f\"数据库{cls.db_name}连接id为:{cls.conn_id}\")\n        print(f\"cls.db_name is {cls.db_name}\")\n        print(f\"cls.conn_id is {cls.conn_id}\")\n>       hp.sdc_dw.drop_database(cls.db_name, cls.conn_id)\n\ncases\\hadoop\\plsql\\testplsql.py:38: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\napi\\http\\sdc_dw.py:415: in drop_database\n    raise e\napi\\http\\sdc_dw.py:406: in drop_database\n    data_dict = dw_basic.delete_dwdesign_dbManager_v1_dbs(dbName=db_name)[\"success\"]\napi\\http\\sdc_dw_base.py:218: in delete_dwdesign_dbManager_v1_dbs\n    raise e\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <api.http.sdc_dw_base.SdcDwBasic object at 0x000001D336C32D00>, dbName = 'autoTest_roc'\n\n    def delete_dwdesign_dbManager_v1_dbs(self, dbName):\n        \"\"\"#\n                Args:\n                    str dbName: 仓库名称\n                    int dbType: 类型：0为全部，1为主题，2为集市\n                    str dbAlias: 显示名称\n                    str pageNum: 数据仓库描述\n    \n                Returns:\n                Raises:\n                example：\n                \"\"\"\n        try:\n            # 0、获取最新 session\n            self.get_session_new()\n            # url = self.url_base64 + \"/api/dwdesign/dbManager/v1/dbs/4?dbName={dbName}\"\n>           url = self.url_base64 + eval(self.delete_design_dbs)\nE           TypeError: eval() arg 1 must be a string, bytes or code object\n\napi\\http\\sdc_dw_base.py:208: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_Class__pytest_setup_class",
+    "time" : {
+      "start" : 1609316221765,
+      "stop" : 1609316222468,
+      "duration" : 703
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_Class__pytest_setup_method",
+    "time" : {
+      "start" : 1609316240339,
+      "stop" : 1609316240522,
+      "duration" : 183
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "TypeError: eval() arg 1 must be a string, bytes or code object",
+    "statusTrace" : "cls = <class 'cases.hadoop.plsql.testplsql.TestPLSqlManipulateData'>\n\n    @classmethod\n    def teardown_class(cls):\n        \"\"\"\n        用例执行完成后，删除本次测试新建的库\n        \"\"\"\n        # cls.conn_id = hp.sdc_dw.get_dbName_connId(db_name=cls.db_name)\n        # print(f\"数据库{cls.db_name}连接id为:{cls.conn_id}\")\n        print(f\"cls.db_name is {cls.db_name}\")\n        print(f\"cls.conn_id is {cls.conn_id}\")\n>       hp.sdc_dw.drop_database(cls.db_name, cls.conn_id)\n\ncases\\hadoop\\plsql\\testplsql.py:38: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\napi\\http\\sdc_dw.py:415: in drop_database\n    raise e\napi\\http\\sdc_dw.py:406: in drop_database\n    data_dict = dw_basic.delete_dwdesign_dbManager_v1_dbs(dbName=db_name)[\"success\"]\napi\\http\\sdc_dw_base.py:218: in delete_dwdesign_dbManager_v1_dbs\n    raise e\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <api.http.sdc_dw_base.SdcDwBasic object at 0x000001D336C32D00>, dbName = 'autoTest_roc'\n\n    def delete_dwdesign_dbManager_v1_dbs(self, dbName):\n        \"\"\"#\n                Args:\n                    str dbName: 仓库名称\n                    int dbType: 类型：0为全部，1为主题，2为集市\n                    str dbAlias: 显示名称\n                    str pageNum: 数据仓库描述\n    \n                Returns:\n                Raises:\n                example：\n                \"\"\"\n        try:\n            # 0、获取最新 session\n            self.get_session_new()\n            # url = self.url_base64 + \"/api/dwdesign/dbManager/v1/dbs/4?dbName={dbName}\"\n>           url = self.url_base64 + eval(self.delete_design_dbs)\nE           TypeError: eval() arg 1 must be a string, bytes or code object\n\napi\\http\\sdc_dw_base.py:208: TypeError",
+    "steps" : [ {
+      "name" : "初始化表及数据",
+      "time" : {
+        "start" : 1609316240523,
+        "stop" : 1609316240523,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取数据库连接id",
+      "time" : {
+        "start" : 1609316240523,
+        "stop" : 1609316240660,
+        "duration" : 137
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "获取对应的表、sql语句、语句执行顺序及预期结果",
+      "time" : {
+        "start" : 1609316240660,
+        "stop" : 1609316240660,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "按顺序执行sql语句，将返回结果与预期结果做对比",
+      "time" : {
+        "start" : 1609316240660,
+        "stop" : 1609316250291,
+        "duration" : 9631
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "_Class__pytest_setup_class::0",
+    "time" : {
+      "start" : 1609316250294,
+      "stop" : 1609316260762,
+      "duration" : 10468
+    },
+    "status" : "broken",
+    "statusMessage" : "TypeError: eval() arg 1 must be a string, bytes or code object\n",
+    "statusTrace" : "  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\allure_commons\\_allure.py\", line 185, in __call__\n    return self._fixture_function(*args, **kwargs)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_pytest\\fixtures.py\", line 800, in _teardown_yield_fixture\n    next(it)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_pytest\\python.py\", line 705, in xunit_setup_class_fixture\n    _call_with_optional_argument(func, self.obj)\n  File \"c:\\users\\administrator\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\_pytest\\python.py\", line 632, in _call_with_optional_argument\n    func(arg)\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\cases\\hadoop\\plsql\\testplsql.py\", line 38, in teardown_class\n    hp.sdc_dw.drop_database(cls.db_name, cls.conn_id)\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\api\\http\\sdc_dw.py\", line 415, in drop_database\n    raise e\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\api\\http\\sdc_dw.py\", line 406, in drop_database\n    data_dict = dw_basic.delete_dwdesign_dbManager_v1_dbs(dbName=db_name)[\"success\"]\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\api\\http\\sdc_dw_base.py\", line 218, in delete_dwdesign_dbManager_v1_dbs\n    raise e\n  File \"D:\\PythonProjects\\me_auto_test\\autoTest\\api\\http\\sdc_dw_base.py\", line 208, in delete_dwdesign_dbManager_v1_dbs\n    url = self.url_base64 + eval(self.delete_design_dbs)\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  }, {
+    "name" : "_Class__pytest_setup_method::0",
+    "time" : {
+      "start" : 1609316250292,
+      "stop" : 1609316250292,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "SQL 创建和管理表"
+  }, {
+    "name" : "tag",
+    "value" : "test"
+  }, {
+    "name" : "parentSuite",
+    "value" : "cases.hadoop.plsql"
+  }, {
+    "name" : "suite",
+    "value" : "testplsql"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPLSqlManipulateData"
+  }, {
+    "name" : "host",
+    "value" : "SF-4359"
+  }, {
+    "name" : "thread",
+    "value" : "25044-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "cases.hadoop.plsql.testplsql"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "cases",
+    "value" : "{'module_name': 'SQL 创建和管理表', 'module_case_name': '删除表操作_drop_01', 'name_id': 'dwrun_sql_002_drop_table_01', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott04', 'exec_order': ['sql', 'check_td', 'sql1', 'check_td1'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "test" ]
+  },
+  "source" : "a81716837d8638a8.json",
+  "parameterValues" : [ "{'module_name': 'SQL 创建和管理表', 'module_case_name': '删除表操作_drop_01', 'name_id': 'dwrun_sql_002_drop_table_01', 'isInitialized': 0, 'sqltype': 'plsql', 'tb_name': 'scott04', 'exec_order': ['sql', 'check_td', 'sql1', 'check_td1'], 'exec_sql': {'sql': 'f\"create table {tb_name}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));\"', 'check_td': 'f\"show tables;\"', 'sql1': 'f\"drop table if exists {tb_name};\"', 'check_td1': 'f\"show tables;\"'}, 'expected_result': None}" ]
+}

@@ -1,0 +1,597 @@
+{
+  "f67bf27e6c00b0bc19359ccf5d82d673" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "38261a1747dbdb21",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 执行sql异常,返回结果：\n{'result': 1, 'msg': \"Error running query: org.apache.spark.sql.AnalysisException: Undefined function: 'to_number'. This function is neither a registered temporary function nor a permanent function registered in the database 'autotest_roc'.; line 8 pos 15 Query: select ename,sal from emp where sal>to_number('$3000.00','$99999.99'); Parameters: []\", 'detilMsg': \"java.sql.SQLException: Error running query: org.apache.spark.sql.AnalysisException: Undefined function: 'to_number'. This function is neither a registered temporary function nor a permanent function registered in the database 'autotest_roc'.; line 8 pos 15 Query: select ename,sal from emp where sal>to_number('$3000.00','$99999.99'); Parameters: []\\n\\tat org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:392)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:64)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:27)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.executeQuery(SQLExecutor.java:167)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.execute(SQLExecutor.java:60)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$FastClassBySpringCGLIB$$87a3a589.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$EnhancerBySpringCGLIB$$c3fff041.execute(<generated>)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl.exec(SQLParseServiceImpl.java:276)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$FastClassBySpringCGLIB$$b336c078.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:667)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$EnhancerBySpringCGLIB$$b4ae0e6e.exec(<generated>)\\n\\tat com.sefonsoft.sdcdw.resource.dwrun.SQLParseResource.exec(SQLParseResource.java:232)\\n\\tat sun.reflect.GeneratedMethodAccessor216.invoke(Unknown Source)\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\n\\tat java.lang.reflect.Method.invoke(Method.java:498)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.SessionContextFilter.doFilter(SessionContextFilter.java:40)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.AuthFilter.doFilter(AuthFilter.java:139)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\n\\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\\n\\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\n\\tat java.lang.Thread.run(Thread.java:745)\\n\", 'duration': 0.54, 'head': None, 'data': None, 'affectNum': -1}",
+      "time" : {
+        "start" : 1609388412495,
+        "stop" : 1609388413275,
+        "duration" : 780
+      }
+    } ]
+  },
+  "33889eb250c091c5591318c49f6fd3e3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "220afac8bd60f5d9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311465392,
+        "stop" : 1609311514267,
+        "duration" : 48875
+      }
+    } ]
+  },
+  "8724e6ea58836b9787d4e39d9f13f099" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "69a39d35c296858b",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 执行sql异常,返回结果：\n{'result': 1, 'msg': \"Error running query: org.apache.spark.sql.AnalysisException: cannot resolve 'trunc(avg(spark_catalog.autotest_roc.emp.`sal`), CAST(1 AS STRING))' due to data type mismatch: argument 1 requires date type, however, 'avg(spark_catalog.autotest_roc.emp.`sal`)' is of decimal(11,6) type.; line 7 pos 5;\\n'Project [*]\\n+- 'Filter ('SEFONSOFT_TWO_TX.SEFONSOFT_ROW_NO_X > 0)\\n   +- 'SubqueryAlias SEFONSOFT_TWO_TX\\n      +- 'GlobalLimit 200\\n         +- 'LocalLimit 200\\n            +- 'Project [row_number() windowspecdefinition(1 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS SEFONSOFT_ROW_NO_X#626, ArrayBuffer(SEFONSOFT_ONE_TX).*]\\n               +- 'Filter (1 = 1)\\n                  +- 'SubqueryAlias SEFONSOFT_ONE_TX\\n                     +- 'Aggregate [sum(sal#633) AS sum(sal)#638, unresolvedalias(trunc(avg(sal#633), cast(1 as string)), None)]\\n                        +- Filter (cast(deptno#635 as decimal(4,0)) = cast(cast(10 as decimal(2,0)) as decimal(4,0)))\\n                           +- SubqueryAlias spark_catalog.autotest_roc.emp\\n                              +- HiveTableRelation `autotest_roc`.`emp`, org.apache.hadoop.hive.hbase.HBaseSerDe, [EMPNO#628, ENAME#629, JOB#630, MGR#631, HIREDATE#632, SAL#633, COMM#634, DEPTNO#635], Statistics(sizeInBytes=0.0 B)\\n Query: select sum(sal),trunc(avg(sal),1) from emp where deptno=10; Parameters: []\", 'detilMsg': \"java.sql.SQLException: Error running query: org.apache.spark.sql.AnalysisException: cannot resolve 'trunc(avg(spark_catalog.autotest_roc.emp.`sal`), CAST(1 AS STRING))' due to data type mismatch: argument 1 requires date type, however, 'avg(spark_catalog.autotest_roc.emp.`sal`)' is of decimal(11,6) type.; line 7 pos 5;\\n'Project [*]\\n+- 'Filter ('SEFONSOFT_TWO_TX.SEFONSOFT_ROW_NO_X > 0)\\n   +- 'SubqueryAlias SEFONSOFT_TWO_TX\\n      +- 'GlobalLimit 200\\n         +- 'LocalLimit 200\\n            +- 'Project [row_number() windowspecdefinition(1 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS SEFONSOFT_ROW_NO_X#626, ArrayBuffer(SEFONSOFT_ONE_TX).*]\\n               +- 'Filter (1 = 1)\\n                  +- 'SubqueryAlias SEFONSOFT_ONE_TX\\n                     +- 'Aggregate [sum(sal#633) AS sum(sal)#638, unresolvedalias(trunc(avg(sal#633), cast(1 as string)), None)]\\n                        +- Filter (cast(deptno#635 as decimal(4,0)) = cast(cast(10 as decimal(2,0)) as decimal(4,0)))\\n                           +- SubqueryAlias spark_catalog.autotest_roc.emp\\n                              +- HiveTableRelation `autotest_roc`.`emp`, org.apache.hadoop.hive.hbase.HBaseSerDe, [EMPNO#628, ENAME#629, JOB#630, MGR#631, HIREDATE#632, SAL#633, COMM#634, DEPTNO#635], Statistics(sizeInBytes=0.0 B)\\n Query: select sum(sal),trunc(avg(sal),1) from emp where deptno=10; Parameters: []\\n\\tat org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:392)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:64)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:27)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.executeQuery(SQLExecutor.java:167)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.execute(SQLExecutor.java:60)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$FastClassBySpringCGLIB$$87a3a589.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$EnhancerBySpringCGLIB$$c3fff041.execute(<generated>)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl.exec(SQLParseServiceImpl.java:276)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$FastClassBySpringCGLIB$$b336c078.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:667)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$EnhancerBySpringCGLIB$$b4ae0e6e.exec(<generated>)\\n\\tat com.sefonsoft.sdcdw.resource.dwrun.SQLParseResource.exec(SQLParseResource.java:232)\\n\\tat sun.reflect.GeneratedMethodAccessor216.invoke(Unknown Source)\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\n\\tat java.lang.reflect.Method.invoke(Method.java:498)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.SessionContextFilter.doFilter(SessionContextFilter.java:40)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.AuthFilter.doFilter(AuthFilter.java:139)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\n\\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\\n\\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\n\\tat java.lang.Thread.run(Thread.java:745)\\n\", 'duration': 0.77, 'head': None, 'data': None, 'affectNum': -1}",
+      "time" : {
+        "start" : 1609388375741,
+        "stop" : 1609388376764,
+        "duration" : 1023
+      }
+    } ]
+  },
+  "cf203b6be9310e76a28b0541300204ed" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "90a502afc08c5a10",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311514435,
+        "stop" : 1609311559883,
+        "duration" : 45448
+      }
+    } ]
+  },
+  "50f2ad4eb2a08654f6550cb16f141d46" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9d7b39874f7afb97",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311419125,
+        "stop" : 1609311465233,
+        "duration" : 46108
+      }
+    } ]
+  },
+  "3262edb3eecde1ef01ee4e093f434617" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1ab41ca36e085800",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311360013,
+        "stop" : 1609311419003,
+        "duration" : 58990
+      }
+    } ]
+  },
+  "84e036454790f7ad02612fb43d95d1be" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9e2ce122d5ca5b77",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388481224,
+        "stop" : 1609388497985,
+        "duration" : 16761
+      }
+    } ]
+  },
+  "d9bc7d356e4fab4f1f7318849c9140de" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2de9c7456fadf262",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388430826,
+        "stop" : 1609388447537,
+        "duration" : 16711
+      }
+    } ]
+  },
+  "f4a977ed99296a6f46404775dd188c78" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6e7448c60670f8fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311752190,
+        "stop" : 1609311797509,
+        "duration" : 45319
+      }
+    } ]
+  },
+  "8b87f4c1d4b544448b7469f0e0ae4f94" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d36326e4f89a8097",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609322115902,
+        "stop" : 1609322124398,
+        "duration" : 8496
+      }
+    } ]
+  },
+  "4c8a93b0a0c07ecdf8df0db499b66058" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7d7d8c122f613062",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 执行sql异常,返回结果：\n{'result': 1, 'msg': \"Error running query: org.apache.spark.sql.AnalysisException: java.lang.Integer cannot be cast to org.apache.spark.unsafe.types.UTF8String; line 6 pos 10 Query: select extract(month from to_date('2109-07-02','yyyy-mm-dd')) current_month from emp; Parameters: []\", 'detilMsg': \"java.sql.SQLException: Error running query: org.apache.spark.sql.AnalysisException: java.lang.Integer cannot be cast to org.apache.spark.unsafe.types.UTF8String; line 6 pos 10 Query: select extract(month from to_date('2109-07-02','yyyy-mm-dd')) current_month from emp; Parameters: []\\n\\tat org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:392)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:64)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:27)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.executeQuery(SQLExecutor.java:167)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.execute(SQLExecutor.java:60)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$FastClassBySpringCGLIB$$87a3a589.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$EnhancerBySpringCGLIB$$c3fff041.execute(<generated>)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl.exec(SQLParseServiceImpl.java:276)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$FastClassBySpringCGLIB$$b336c078.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:667)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$EnhancerBySpringCGLIB$$b4ae0e6e.exec(<generated>)\\n\\tat com.sefonsoft.sdcdw.resource.dwrun.SQLParseResource.exec(SQLParseResource.java:232)\\n\\tat sun.reflect.GeneratedMethodAccessor216.invoke(Unknown Source)\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\n\\tat java.lang.reflect.Method.invoke(Method.java:498)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.SessionContextFilter.doFilter(SessionContextFilter.java:40)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.AuthFilter.doFilter(AuthFilter.java:139)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\n\\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\\n\\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\n\\tat java.lang.Thread.run(Thread.java:745)\\n\", 'duration': 1.1, 'head': None, 'data': None, 'affectNum': -1}",
+      "time" : {
+        "start" : 1609388354617,
+        "stop" : 1609388356070,
+        "duration" : 1453
+      }
+    } ]
+  },
+  "ca5f2b46f194d39ef18bb502d7f8c998" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8ab4e50e40701a24",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311797640,
+        "stop" : 1609311848110,
+        "duration" : 50470
+      }
+    } ]
+  },
+  "eb2963282bc4edef62169164053d7a91" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "62c4aeb877a09ec1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311655134,
+        "stop" : 1609311751927,
+        "duration" : 96793
+      }
+    } ]
+  },
+  "a20ca2412d73d45463df10837bcd4195" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f79b8f54d31c6249",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311848257,
+        "stop" : 1609311909485,
+        "duration" : 61228
+      }
+    } ]
+  },
+  "9fd6920310ad294b38a81b7478d1bb41" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8bae37ace32b6af4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388337285,
+        "stop" : 1609388354494,
+        "duration" : 17209
+      }
+    } ]
+  },
+  "6b5a08f5f2b99ef454afe55c0d98a3b9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "51a0b2c20449db6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311608325,
+        "stop" : 1609311654535,
+        "duration" : 46210
+      }
+    } ]
+  },
+  "36c778a4405c3a98fe64df82527049d8" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "dd4e88bd8352a2d7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388296738,
+        "stop" : 1609388337116,
+        "duration" : 40378
+      }
+    } ]
+  },
+  "a63e60d08f421a15c0ca473e3118866c" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2a72128d7d270bed",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 执行sql异常,返回结果：\n{'result': 1, 'msg': \"Error running query: org.apache.spark.sql.AnalysisException: Undefined function: 'to_char'. This function is neither a registered temporary function nor a permanent function registered in the database 'autotest_roc'.; line 6 pos 18 Query: select ename,to_char(sal,'L99999.99') salary from emp where deptno=20; Parameters: []\", 'detilMsg': \"java.sql.SQLException: Error running query: org.apache.spark.sql.AnalysisException: Undefined function: 'to_char'. This function is neither a registered temporary function nor a permanent function registered in the database 'autotest_roc'.; line 6 pos 18 Query: select ename,to_char(sal,'L99999.99') salary from emp where deptno=20; Parameters: []\\n\\tat org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:392)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:64)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:27)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.executeQuery(SQLExecutor.java:167)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.execute(SQLExecutor.java:60)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$FastClassBySpringCGLIB$$87a3a589.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$EnhancerBySpringCGLIB$$c3fff041.execute(<generated>)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl.exec(SQLParseServiceImpl.java:276)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$FastClassBySpringCGLIB$$b336c078.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:667)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$EnhancerBySpringCGLIB$$b4ae0e6e.exec(<generated>)\\n\\tat com.sefonsoft.sdcdw.resource.dwrun.SQLParseResource.exec(SQLParseResource.java:232)\\n\\tat sun.reflect.GeneratedMethodAccessor216.invoke(Unknown Source)\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\n\\tat java.lang.reflect.Method.invoke(Method.java:498)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.SessionContextFilter.doFilter(SessionContextFilter.java:40)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.AuthFilter.doFilter(AuthFilter.java:139)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\n\\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\\n\\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\n\\tat java.lang.Thread.run(Thread.java:745)\\n\", 'duration': 0.92, 'head': None, 'data': None, 'affectNum': -1}",
+      "time" : {
+        "start" : 1609388394192,
+        "stop" : 1609388395318,
+        "duration" : 1126
+      }
+    } ]
+  },
+  "12a06335ff07ced11b44389e8ff8ff11" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d8bdbc37e15d09ec",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388413469,
+        "stop" : 1609388430633,
+        "duration" : 17164
+      }
+    } ]
+  },
+  "191c7373c90cdf2b4f1f9cad99f15745" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6e8015360f0c6b69",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 执行sql异常,返回结果：\n{'result': 1, 'msg': \"Error running query: org.apache.spark.sql.AnalysisException: Invalid number of arguments for function trunc. Expected: 2; Found: 1; line 6 pos 9 Query: select trunc(months_between(to_date('2018-10-30','yyyy-MM-dd'),to_date('2019-10-30','yyyy-MM-dd')))/2) work_year from emp where empno=2222 Parameters: []\", 'detilMsg': \"java.sql.SQLException: Error running query: org.apache.spark.sql.AnalysisException: Invalid number of arguments for function trunc. Expected: 2; Found: 1; line 6 pos 9 Query: select trunc(months_between(to_date('2018-10-30','yyyy-MM-dd'),to_date('2019-10-30','yyyy-MM-dd')))/2) work_year from emp where empno=2222 Parameters: []\\n\\tat org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:392)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:64)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.StatTimeOutQueryRunner.query(StatTimeOutQueryRunner.java:27)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.executeQuery(SQLExecutor.java:167)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor.execute(SQLExecutor.java:60)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$FastClassBySpringCGLIB$$87a3a589.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:736)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:671)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLExecutor$$EnhancerBySpringCGLIB$$c3fff041.execute(<generated>)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl.exec(SQLParseServiceImpl.java:276)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$FastClassBySpringCGLIB$$b336c078.invoke(<generated>)\\n\\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:667)\\n\\tat com.sefonsoft.sdcdw.service.dwrun.impl.SQLParseServiceImpl$$EnhancerBySpringCGLIB$$b4ae0e6e.exec(<generated>)\\n\\tat com.sefonsoft.sdcdw.resource.dwrun.SQLParseResource.exec(SQLParseResource.java:232)\\n\\tat sun.reflect.GeneratedMethodAccessor216.invoke(Unknown Source)\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\n\\tat java.lang.reflect.Method.invoke(Method.java:498)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.SessionContextFilter.doFilter(SessionContextFilter.java:40)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat com.sefonsoft.sdcdw.util.filter.AuthFilter.doFilter(AuthFilter.java:139)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\n\\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\\n\\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\n\\tat java.lang.Thread.run(Thread.java:745)\\n\", 'duration': 0.89, 'head': None, 'data': None, 'affectNum': -1}",
+      "time" : {
+        "start" : 1609388356420,
+        "stop" : 1609388357718,
+        "duration" : 1298
+      }
+    } ]
+  },
+  "410c0c6827b989276951668e9fda4b3b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b850373998c41771",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311560050,
+        "stop" : 1609311608139,
+        "duration" : 48089
+      }
+    } ]
+  },
+  "3d0b12e609088d13a1662aa35f7d7e6b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9248322e3f57d661",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311959170,
+        "stop" : 1609312019686,
+        "duration" : 60516
+      }
+    } ]
+  },
+  "ec6862816861b3d1a3ea4bae053b3984" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f0b2a7a2c6597f23",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388170006,
+        "stop" : 1609388210044,
+        "duration" : 40038
+      }
+    } ]
+  },
+  "e6764c24a73f7dac491807619bd8983a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a4e683c7ba40298",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388395537,
+        "stop" : 1609388412357,
+        "duration" : 16820
+      }
+    } ]
+  },
+  "7c37fd30fdc1808daedf46f3d48c1c7f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3deb8a6db01ca939",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388464413,
+        "stop" : 1609388481023,
+        "duration" : 16610
+      }
+    } ]
+  },
+  "5090df928a245476d5214632146f5052" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fb9236bfec0d984b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609311909934,
+        "stop" : 1609311958984,
+        "duration" : 49050
+      }
+    } ]
+  },
+  "6bfbfbe92855ec19ae8cc0b92eae5947" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "74d5a01829f7306a",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: 查询数据与默认查询数据不一致，请检查\nexpected_result: \n[['1', '0', '2']]\ndata_dict: \n[['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2'], ['1', '0', '2']]",
+      "time" : {
+        "start" : 1609388376949,
+        "stop" : 1609388393944,
+        "duration" : 16995
+      }
+    } ]
+  },
+  "b01cf12e836dd502acba31f611dab4fe" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7175157e740bd39e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609322108807,
+        "stop" : 1609322115734,
+        "duration" : 6927
+      }
+    } ]
+  },
+  "99c1290eb55cc7bcad015be031fc3ad2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d6cfc5dfa7562dd9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388357862,
+        "stop" : 1609388375564,
+        "duration" : 17702
+      }
+    } ]
+  },
+  "0842a07786d2217fd8cf4dd4c80af528" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5af21b67eb090a84",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609322103800,
+        "stop" : 1609322108648,
+        "duration" : 4848
+      }
+    } ]
+  },
+  "f34e739c7fb1c19907da43d22a9448bf" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "97e4b38c53629e85",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609388447665,
+        "stop" : 1609388464249,
+        "duration" : 16584
+      }
+    } ]
+  }
+}

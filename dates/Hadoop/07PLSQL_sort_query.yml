@@ -1,0 +1,89 @@
+- module_name: SQL 排序数据查询
+  module_case_name: 单列降序排序DESC（NULL行在最前）
+  name_id: dwrun_sql_030_simple_desc
+  isInitialized: 1
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 单列降序排序DESC（NULL行在最前）
+    sql: f"select ename,sal from {tb_name1} order by sal DESC;"
+  expected_result:
+    data: [['KING', '5000.6'], ['SCOTT1', '3000'], ['FORD', '3000'], ['JONES2', '2975.3'],['BLAKE', '2850'], ['CLARK', '2450.5'], ['ALLEN', '1600.6'], ['ALLEN', '1600'],['TURNER', '1500'], ['MILLER', '1300'], ['WARD', '1250'], ['MARTIN', '1250'],['JAMES', '950'], ['SMITH', '800.5'], ['SMITH', '800'], ['SMITH', '800']]
+    header:
+
+- module_name: SQL 排序数据查询
+  module_case_name: 单列升序排序ASC（NULL行在最后）
+  name_id: dwrun_sql_200_simple_asc
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 单列升序排序ASC（NULL行在最后）
+    sql: f"select ename,sal from {tb_name1} order by sal ASC;"
+  expected_result:
+    data: [['SMITH', '800'], ['SMITH', '800'], ['SMITH', '800.5'], ['JAMES', '950'], ['WARD', '1250'],['MARTIN', '1250'], ['MILLER', '1300'], ['TURNER', '1500'], ['ALLEN', '1600'], ['ALLEN', '1600.6'],['CLARK', '2450.5'], ['BLAKE', '2850'], ['JONES2', '2975.3'], ['SCOTT1', '3000'],['FORD', '3000'], ['KING', '5000.6']]
+    header:
+
+- module_name: SQL 排序数据查询
+  module_case_name: 多列排序
+  name_id: dwrun_sql_201
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 多列排序
+    sql: f"select ename,deptno,sal from {tb_name1} order by deptno ASC, sal DESC;"
+  expected_result:
+    data: [['KING', '10', '5000.6'], ['CLARK', '10', '2450.5'], ['MILLER', '10', '1300'],['SCOTT1', '20', '3000'], ['FORD', '20', '3000'], ['JONES2', '20', '2975.3'],['SMITH', '20', '800.5'], ['SMITH', '20', '800'], ['SMITH', '20', '800'],['BLAKE', '30', '2850'], ['ALLEN', '30', '1600.6'], ['ALLEN', '30', '1600'],['TURNER', '30', '1500'], ['WARD', '30', '1250'], ['MARTIN', '30', '1250'], ['JAMES', '30', '950']]
+    header:
+
+- module_name: SQL 排序数据查询
+  module_case_name: 非选择列表列排序
+  name_id: dwrun_sql_202
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 非选择列表列排序
+    sql: f"select ename from {tb_name1} order by sal desc;"
+  expected_result:
+    data: [['KING'], ['SCOTT1'], ['FORD'], ['JONES2'], ['BLAKE'], ['CLARK'], ['ALLEN'], ['ALLEN'], ['TURNER'], ['MILLER'], ['WARD'], ['MARTIN'], ['JAMES'], ['SMITH'], ['SMITH'], ['SMITH']]
+    header:
+
+- module_name: SQL 排序数据查询
+  module_case_name: 列别名排序
+  name_id: dwrun_sql_203
+  isInitialized: 0
+  isCheckHeader: 1
+  sqltype: plsql
+  tb_name:
+    tb_name1: emp
+    tb_name2: dept
+  exec_order:
+    - sql
+  exec_sql:
+    # 列别名排序
+    sql: f"select ename,sal*12 年收入 from {tb_name1} order by 年收入 desc;"
+  expected_result:
+    data: [['KING', '60007.2'], ['SCOTT1', '36000'], ['FORD', '36000'], ['JONES2', '35703.6'], ['BLAKE', '34200'], ['CLARK', '29406'], ['ALLEN', '19207.2'], ['ALLEN', '19200'], ['TURNER', '18000'], ['MILLER', '15600'], ['WARD', '15000'], ['MARTIN', '15000'], ['JAMES', '11400'], ['SMITH', '9606'], ['SMITH', '9600'], ['SMITH', '9600']]
+    header: ['ename', '年收入']

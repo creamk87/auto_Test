@@ -1,0 +1,71 @@
+- module_name: SQL 创建和管理表
+  module_case_name: 创建普通表_create_01
+  name_id: dwrun_sql_001_create_table_01
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: scott01
+   tb_name2:
+  exec_order:
+    - sql1
+    - check_td1
+    - sql
+    - check_td
+  exec_sql:
+    # 创建表scott01
+    sql: f"create table {tb_name1}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));"
+    check_td: f"show tables;"
+    sql1: f"drop table if exists {tb_name1};"
+    check_td1: f"show tables;"
+  expected_result:
+    data:
+    header:
+
+- module_name: SQL 创建和管理表
+  module_case_name: 创建普通表_create_02
+  name_id: dwrun_sql_001_create_table_02
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: scott03
+   tb_name2:
+  exec_order:
+    - sql1
+    - check_td1
+    - sql
+    - check_td
+  exec_sql:
+    # 创建表scott03
+    sql: f"create table {tb_name1}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(20));"
+    check_td: f"show tables;"
+    sql1: f"drop table if exists {tb_name1};"
+    check_td1: f"show tables;"
+  expected_result:
+    data:
+    header:
+
+- module_name: SQL 创建和管理表
+  module_case_name: 删除表操作_drop_01
+  name_id: dwrun_sql_002_drop_table_01
+  isInitialized: 0
+  isCheckHeader: 0
+  sqltype: plsql
+  tb_name:
+   tb_name1: scott04
+   tb_name2:
+  exec_order:
+    - sql
+    - check_td
+    - sql1
+    - check_td1
+  exec_sql:
+    # 创建表scott04
+    sql: f"create table {tb_name1}(no number(2) PRIMARY KEY,name varchar2(10),loc varchar2(10));"
+    check_td: f"show tables;"
+    sql1: f"drop table if exists {tb_name1};"
+    check_td1: f"show tables;"
+  expected_result:
+    data:
+    header:
